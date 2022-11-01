@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "5d40d8af-366e-4a15-be5f-85b86a435897": {
+      "ProjectGuid": "5d40d8af-366e-4a15-be5f-85b86a435897",
+      "DisplayName": "Estoque.Application",
+      "ColorIndex": 0
+    },
+    "fe62b7d9-907d-4d40-865b-43574f713f0b": {
+      "ProjectGuid": "fe62b7d9-907d-4d40-865b-43574f713f0b",
+      "DisplayName": "Estoque.WebAPI",
+      "ColorIndex": 1
+    },
+    "1941e8e6-7de2-4cf1-b031-2e6f3c5bf63f": {
+      "ProjectGuid": "1941e8e6-7de2-4cf1-b031-2e6f3c5bf63f",
+      "DisplayName": "Estoque.Application",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}

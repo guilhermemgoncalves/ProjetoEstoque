@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "fe62b7d9-907d-4d40-865b-43574f713f0b": {
+      "ProjectGuid": "fe62b7d9-907d-4d40-865b-43574f713f0b",
+      "DisplayName": "Estoque.WebAPI",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
