@@ -2,6 +2,6 @@
 {
     public class GetToolsResponse
     {
-        public List<BasicToolResponse> BasicToolResponse { get; set; }
+        public List<BasicToolResponse> BasicToolResponse { get; set; } = new List<BasicToolResponse>();
     }
 }

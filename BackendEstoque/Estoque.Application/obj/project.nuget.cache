@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0E6/J/7Nrr00kyG7YVLQe5jFq0kl9+9JAcrneQgtvmv2Xtrc5hKKU4zhwyehQgQ1ElLX1noXIAzQNpqm+C8vAA==",
+  "dgSpecHash": "JcN2oexRgZie90dUYB7rvRxH3+RLGNZtZ/DbC5CWTe6+ACoW8H2fhKfsepcVTQI0hdAgxmpBCePH95JZoyJkVQ==",
   "success": true,
-  "projectFilePath": "C:\\Projects\\Projeto Estoque\\BackendEstoque\\Estoque.Application\\Estoque.Application.csproj",
+  "projectFilePath": "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.Application\\Estoque.Application.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

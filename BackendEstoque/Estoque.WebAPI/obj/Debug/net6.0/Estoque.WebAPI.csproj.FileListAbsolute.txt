@@ -27,3 +27,34 @@ C:\Projects\Projeto Estoque\BackendEstoque\Estoque.WebAPI\obj\Debug\net6.0\Estoq
 C:\Projects\Projeto Estoque\BackendEstoque\Estoque.WebAPI\obj\Debug\net6.0\ref\Estoque.WebAPI.dll
 C:\Projects\Projeto Estoque\BackendEstoque\Estoque.WebAPI\obj\Debug\net6.0\Estoque.WebAPI.pdb
 C:\Projects\Projeto Estoque\BackendEstoque\Estoque.WebAPI\obj\Debug\net6.0\Estoque.WebAPI.genruntimeconfig.cache
+C:\projects\estoque\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\bin\Debug\net6.0\appsettings.Development.json
+C:\projects\estoque\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\bin\Debug\net6.0\appsettings.json
+C:\projects\estoque\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\bin\Debug\net6.0\Estoque.WebAPI\obj\Estoque.WebAPI.csproj.nuget.dgspec.json
+C:\projects\estoque\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\bin\Debug\net6.0\Estoque.WebAPI\obj\project.assets.json
+C:\projects\estoque\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\bin\Debug\net6.0\Estoque.WebAPI.exe
+C:\projects\estoque\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\bin\Debug\net6.0\Estoque.WebAPI.deps.json
+C:\projects\estoque\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\bin\Debug\net6.0\Estoque.WebAPI.runtimeconfig.json
+C:\projects\estoque\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\bin\Debug\net6.0\Estoque.WebAPI.dll
+C:\projects\estoque\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\bin\Debug\net6.0\Estoque.WebAPI.pdb
+C:\projects\estoque\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\projects\estoque\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\projects\estoque\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\projects\estoque\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\projects\estoque\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\bin\Debug\net6.0\Estoque.Application.dll
+C:\projects\estoque\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\bin\Debug\net6.0\Estoque.Application.pdb
+C:\projects\estoque\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\obj\Debug\net6.0\Estoque.WebAPI.csproj.AssemblyReference.cache
+C:\projects\estoque\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\obj\Debug\net6.0\Estoque.WebAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\projects\estoque\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\obj\Debug\net6.0\Estoque.WebAPI.AssemblyInfoInputs.cache
+C:\projects\estoque\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\obj\Debug\net6.0\Estoque.WebAPI.AssemblyInfo.cs
+C:\projects\estoque\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\obj\Debug\net6.0\Estoque.WebAPI.csproj.CoreCompileInputs.cache
+C:\projects\estoque\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\obj\Debug\net6.0\Estoque.WebAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\projects\estoque\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\obj\Debug\net6.0\Estoque.WebAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\projects\estoque\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\obj\Debug\net6.0\staticwebassets.build.json
+C:\projects\estoque\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\obj\Debug\net6.0\staticwebassets.development.json
+C:\projects\estoque\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\obj\Debug\net6.0\scopedcss\bundle\Estoque.WebAPI.styles.css
+C:\projects\estoque\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\obj\Debug\net6.0\Estoque.WebAPI.csproj.CopyComplete
+C:\projects\estoque\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\obj\Debug\net6.0\Estoque.WebAPI.dll
+C:\projects\estoque\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\obj\Debug\net6.0\refint\Estoque.WebAPI.dll
+C:\projects\estoque\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\obj\Debug\net6.0\Estoque.WebAPI.pdb
+C:\projects\estoque\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\obj\Debug\net6.0\Estoque.WebAPI.genruntimeconfig.cache
+C:\projects\estoque\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\obj\Debug\net6.0\ref\Estoque.WebAPI.dll

@@ -16,10 +16,14 @@
       "Microsoft.OpenApi/1.2.3": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Microsoft.OpenApi.dll": {}
+          "lib/netstandard2.0/Microsoft.OpenApi.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.OpenApi.dll": {}
+          "lib/netstandard2.0/Microsoft.OpenApi.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "Swashbuckle.AspNetCore/6.2.3": {
@@ -40,10 +44,14 @@
           "Microsoft.OpenApi": "1.2.3"
         },
         "compile": {
-          "lib/net6.0/Swashbuckle.AspNetCore.Swagger.dll": {}
+          "lib/net6.0/Swashbuckle.AspNetCore.Swagger.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/Swashbuckle.AspNetCore.Swagger.dll": {}
+          "lib/net6.0/Swashbuckle.AspNetCore.Swagger.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
@@ -55,23 +63,41 @@
           "Swashbuckle.AspNetCore.Swagger": "6.2.3"
         },
         "compile": {
-          "lib/net6.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {}
+          "lib/net6.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {}
+          "lib/net6.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "Swashbuckle.AspNetCore.SwaggerUI/6.2.3": {
         "type": "package",
         "compile": {
-          "lib/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {}
+          "lib/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {}
+          "lib/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "Estoque.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Estoque.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Estoque.Application.dll": {}
+        }
       }
     }
   },
@@ -200,27 +226,33 @@
         "swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
+    },
+    "Estoque.Application/1.0.0": {
+      "type": "project",
+      "path": "../Estoque.Application/Estoque.Application.csproj",
+      "msbuildProject": "../Estoque.Application/Estoque.Application.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Estoque.Application >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\225587\\.nuget\\packages\\": {}
+    "C:\\Users\\g.marciano.goncalves\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projects\\Projeto Estoque\\BackendEstoque\\Estoque.WebAPI\\Estoque.WebAPI.csproj",
+      "projectUniqueName": "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.WebAPI\\Estoque.WebAPI.csproj",
       "projectName": "Estoque.WebAPI",
-      "projectPath": "C:\\Projects\\Projeto Estoque\\BackendEstoque\\Estoque.WebAPI\\Estoque.WebAPI.csproj",
-      "packagesPath": "C:\\Users\\225587\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\Projeto Estoque\\BackendEstoque\\Estoque.WebAPI\\obj\\",
+      "projectPath": "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.WebAPI\\Estoque.WebAPI.csproj",
+      "packagesPath": "C:\\Users\\g.marciano.goncalves\\.nuget\\packages\\",
+      "outputPath": "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\225587\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\g.marciano.goncalves\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -233,7 +265,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.Application\\Estoque.Application.csproj": {
+              "projectPath": "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.Application\\Estoque.Application.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -257,7 +293,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -269,7 +306,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.110\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

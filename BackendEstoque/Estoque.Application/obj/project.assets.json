@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\225587\\.nuget\\packages\\": {}
+    "C:\\Users\\g.marciano.goncalves\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projects\\Projeto Estoque\\BackendEstoque\\Estoque.Application\\Estoque.Application.csproj",
+      "projectUniqueName": "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.Application\\Estoque.Application.csproj",
       "projectName": "Estoque.Application",
-      "projectPath": "C:\\Projects\\Projeto Estoque\\BackendEstoque\\Estoque.Application\\Estoque.Application.csproj",
-      "packagesPath": "C:\\Users\\225587\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\Projeto Estoque\\BackendEstoque\\Estoque.Application\\obj\\",
+      "projectPath": "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.Application\\Estoque.Application.csproj",
+      "packagesPath": "C:\\Users\\g.marciano.goncalves\\.nuget\\packages\\",
+      "outputPath": "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\225587\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\g.marciano.goncalves\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -51,7 +51,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -60,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.110\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projects\\Projeto Estoque\\BackendEstoque\\Estoque.WebAPI\\Estoque.WebAPI.csproj": {}
+    "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.WebAPI\\Estoque.WebAPI.csproj": {}
   },
   "projects": {
-    "C:\\Projects\\Projeto Estoque\\BackendEstoque\\Estoque.WebAPI\\Estoque.WebAPI.csproj": {
+    "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.Application\\Estoque.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\Projeto Estoque\\BackendEstoque\\Estoque.WebAPI\\Estoque.WebAPI.csproj",
-        "projectName": "Estoque.WebAPI",
-        "projectPath": "C:\\Projects\\Projeto Estoque\\BackendEstoque\\Estoque.WebAPI\\Estoque.WebAPI.csproj",
-        "packagesPath": "C:\\Users\\225587\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\Projeto Estoque\\BackendEstoque\\Estoque.WebAPI\\obj\\",
+        "projectUniqueName": "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.Application\\Estoque.Application.csproj",
+        "projectName": "Estoque.Application",
+        "projectPath": "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.Application\\Estoque.Application.csproj",
+        "packagesPath": "C:\\Users\\g.marciano.goncalves\\.nuget\\packages\\",
+        "outputPath": "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\225587\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\g.marciano.goncalves\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -39,6 +39,65 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.WebAPI\\Estoque.WebAPI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.WebAPI\\Estoque.WebAPI.csproj",
+        "projectName": "Estoque.WebAPI",
+        "projectPath": "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.WebAPI\\Estoque.WebAPI.csproj",
+        "packagesPath": "C:\\Users\\g.marciano.goncalves\\.nuget\\packages\\",
+        "outputPath": "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.WebAPI\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\g.marciano.goncalves\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.Application\\Estoque.Application.csproj": {
+                "projectPath": "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.Application\\Estoque.Application.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
           "dependencies": {
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -51,7 +110,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -63,7 +123,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.110\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
