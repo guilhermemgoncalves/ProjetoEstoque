@@ -1,5 +1,5 @@
 ﻿using Estoque.Application.Messages;
-using Estoque.Application.MockEntity;
+using Estoque.Domain.Entities;
 
 namespace Estoque.Application.Interfaces
 {

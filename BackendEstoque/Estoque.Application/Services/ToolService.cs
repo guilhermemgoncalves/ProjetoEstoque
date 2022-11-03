@@ -1,6 +1,6 @@
 ﻿using Estoque.Application.Interfaces;
 using Estoque.Application.Messages;
-using Estoque.Application.MockEntity;
+using Estoque.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

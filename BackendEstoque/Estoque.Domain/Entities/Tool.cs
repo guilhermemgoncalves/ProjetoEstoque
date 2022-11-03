@@ -1,13 +1,18 @@
-﻿using System;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Estoque.Application.MockEntity
+namespace Estoque.Domain.Entities
 {
     public class Tool
     {
+        [BsonId]
+        [BsonRepresentation(BsonType.String)]
+        [BsonElement("_id")]
         public Guid Id { get; set; }
         public string Name { get; set; } = null!;
         public string? Description { get; set; } 
