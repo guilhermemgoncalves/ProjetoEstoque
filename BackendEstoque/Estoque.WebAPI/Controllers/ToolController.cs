@@ -2,7 +2,6 @@
 using Estoque.Application.Messages;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Azure.WebJobs.Extensions.OpenApi.Core.Attributes;
 using System.Net;
 
 namespace Estoque.WebAPI.Controllers
@@ -20,17 +19,7 @@ namespace Estoque.WebAPI.Controllers
             _toolService = toolService;
         }
 
-        [HttpGet("testeapi")]
-        [OpenApiOperation(
-            operationId: "testapi",
-            tags: new[] { "Retorna os lotes atribuidos para o usuário realizar a gravação de voz." }
-        )]
-        [OpenApiResponseWithBody(
-            statusCode: HttpStatusCode.OK,
-            contentType: "application/json",
-            bodyType: typeof(string),
-            Description = "Retorna uma lista de lotes com fases para que o usuário possa gravar a sua voz lendo os textos sugeridos"
-        )]
+        [HttpGet("testeapi")]       
         public string Testeapi()
         {
             var teste = false;

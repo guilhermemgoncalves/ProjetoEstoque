@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Estoque.Application\Estoque.Application.csproj" />
+    <ProjectReference Include="..\Estoque.Infra\Estoque.Infra.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,7 +1,17 @@
 using Estoque.Application.Interfaces;
 using Estoque.Application.Services;
+using Estoque.Domain.Repository;
+using Estoque.Infra.Repositories.MongoDB;
+using Estoque.Infra.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
+
+
+builder.Services.Configure<EstoqueDbSettings>(
+        builder.Configuration.GetSection("EstoqueDatabase")
+    );
+
+builder.Services.AddSingleton<IToolRepository, ToolRepository>();
 
 // Add services to the container.
 
