@@ -23,9 +23,9 @@ namespace Estoque.Infra.Repositories.MongoDB
 
         }
 
-        public Task CreateAsync(Tool newTool)
+        public async Task CreateAsync(Tool newTool)
         {
-            throw new NotImplementedException();
+            await _toolCollection.InsertOneAsync(newTool);
         }
 
         public Task DeleteByIdAsync(Guid id)

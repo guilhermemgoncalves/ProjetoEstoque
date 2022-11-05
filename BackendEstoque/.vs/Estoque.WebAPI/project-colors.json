@@ -15,7 +15,22 @@
       "ProjectGuid": "1941e8e6-7de2-4cf1-b031-2e6f3c5bf63f",
       "DisplayName": "Estoque.Application",
       "ColorIndex": 2
+    },
+    "e9123268-8708-4a59-a515-504b97db3059": {
+      "ProjectGuid": "e9123268-8708-4a59-a515-504b97db3059",
+      "DisplayName": "Estoque.Domain",
+      "ColorIndex": 3
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Arquivos Diversos",
+      "ColorIndex": -1
+    },
+    "2ee1f0f1-0e64-4b22-87ab-fa833aa22f95": {
+      "ProjectGuid": "2ee1f0f1-0e64-4b22-87ab-fa833aa22f95",
+      "DisplayName": "Estoque.Infra",
+      "ColorIndex": 4
     }
   },
-  "NextColorIndex": 3
+  "NextColorIndex": 5
 }

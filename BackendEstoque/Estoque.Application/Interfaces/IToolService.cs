@@ -7,6 +7,8 @@ namespace Estoque.Application.Interfaces
     {
         Task<GetToolsResponse> GetTools();
         List<Tool> GetFakeRepository();
+
+        Task<CreateToolResponse> CreateTool(CreateToolRequest request);
         bool TestService();
     }
 }
