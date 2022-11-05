@@ -37,10 +37,7 @@ namespace Estoque.WebAPI.Controllers
         {
             return await _toolService.GetTools();
         }
-        [HttpPost("Create")]
-        public async Task<CreateToolResponse> GetTools([FromBody] CreateToolRequest request)
-        {            
-            return await _toolService.CreateTool(request);
-        }
+
+        c
     }
 }
