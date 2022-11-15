@@ -33,9 +33,9 @@ namespace Estoque.Infra.Repositories.MongoDB
             throw new NotImplementedException();
         }
 
-        public Task<List<Tool>> GetAsync()
+        public async Task<List<Tool>> GetAsync()
         {
-            throw new NotImplementedException();
+            return await _toolCollection.Find(_ => true).ToListAsync();
         }
 
         public Task<Tool> GetByIdAsync(Guid id)

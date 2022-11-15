@@ -26,9 +26,10 @@ namespace Estoque.Application.Services
                 Category = request.ToolCategory,
                 DateRegistry = DateTime.Now,
                 Description = request.ToolDescription,
-                IsActive = false,
+                IsActive = true,
                 Name = request.ToolName,
-                Price = request.ToolPrice,        
+                Price = request.ToolPrice,
+                
             };
 
             await _toolRepository.CreateAsync(toolEntity);
@@ -42,43 +43,14 @@ namespace Estoque.Application.Services
 
             return response;
         }
-
-        public List<Tool> GetFakeRepository()
-        {
-            List<Tool> fakeRepository = new List<Tool>();
-            var tool1 = new Tool()
-            {
-                Id = Guid.Parse("0a5c4372-ac05-4dc2-9acd-23bebb0779a9"), 
-                Name = "Martelo bola",
-                Category =  "Martelo",
-                DateRegistry = DateTime.UtcNow,
-                Description = "Martelo Bola, Cromo Vanadio, 2Kg",
-                Price = 10.53,
-                IsActive = true,
-            };
-           
-            var tool2 = new Tool()
-            {
-                Id = Guid.Parse("5f8041ff-e74a-4c0d-ba20-32a65b65f67d"),
-                Name = "Marreta",
-                Category = "Martelo",
-                DateRegistry = DateTime.UtcNow,
-                Description = "Martelo Bola, Cromo Vanadio, 2Kg",
-                Price = 10.53,
-                IsActive= false,
-            };
-            fakeRepository.Add(tool1);
-            fakeRepository.Add(tool2);
-           
-            return  fakeRepository;
-        }
+        
 
         public async Task<GetToolsResponse> GetTools()
         {
-            var fakeRepository = GetFakeRepository();
+            var toolsEntity = await _toolRepository.GetAsync();
             GetToolsResponse response = new GetToolsResponse();
 
-            foreach (Tool tool in fakeRepository)
+            foreach (Tool tool in toolsEntity)
             {
                 BasicToolResponse basicToolResponse = new BasicToolResponse()
                 {

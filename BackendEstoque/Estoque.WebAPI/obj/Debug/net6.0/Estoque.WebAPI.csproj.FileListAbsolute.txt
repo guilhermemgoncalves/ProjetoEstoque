@@ -300,3 +300,15 @@ C:\Projects\Projeto Estoque\BackendEstoque\Estoque.WebAPI\bin\Debug\net6.0\runti
 C:\Projects\Projeto Estoque\BackendEstoque\Estoque.WebAPI\bin\Debug\net6.0\runtimes\win\native\mongocrypt.dll
 C:\Projects\Projeto Estoque\BackendEstoque\Estoque.WebAPI\bin\Debug\net6.0\Estoque.Infra.dll
 C:\Projects\Projeto Estoque\BackendEstoque\Estoque.WebAPI\bin\Debug\net6.0\Estoque.Infra.pdb
+C:\projects\estoque\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\bin\Debug\net6.0\DnsClient.dll
+C:\projects\estoque\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\bin\Debug\net6.0\MongoDB.Driver.dll
+C:\projects\estoque\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\bin\Debug\net6.0\MongoDB.Driver.Core.dll
+C:\projects\estoque\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\bin\Debug\net6.0\MongoDB.Libmongocrypt.dll
+C:\projects\estoque\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\bin\Debug\net6.0\SharpCompress.dll
+C:\projects\estoque\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\bin\Debug\net6.0\Snappier.dll
+C:\projects\estoque\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\bin\Debug\net6.0\ZstdSharp.dll
+C:\projects\estoque\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\bin\Debug\net6.0\runtimes\linux\native\libmongocrypt.so
+C:\projects\estoque\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\bin\Debug\net6.0\runtimes\osx\native\libmongocrypt.dylib
+C:\projects\estoque\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\bin\Debug\net6.0\runtimes\win\native\mongocrypt.dll
+C:\projects\estoque\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\bin\Debug\net6.0\Estoque.Infra.dll
+C:\projects\estoque\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\bin\Debug\net6.0\Estoque.Infra.pdb
