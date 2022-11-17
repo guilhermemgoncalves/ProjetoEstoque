@@ -21,5 +21,6 @@ namespace Estoque.Domain.Entities
         public double Price { get; set; }
         public bool IsActive { get; set; } 
         public DateTime DateRegistry { get; set; }
+        public DateTime LastUpdate { get; set; }
     }	
 }

@@ -15,5 +15,6 @@ namespace Estoque.Application.Messages
         public List<string> Tags { get; set; } = new();
         public double Price { get; set; }
         public bool IsActive { get; set; }
+        public DateTime LastUpdate { get; set; }
     }
 }

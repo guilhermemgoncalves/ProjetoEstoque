@@ -12,5 +12,6 @@ namespace Estoque.Application.Messages
         public string? ToolDescription { get; set; } 
         public string ToolCategory { get; set; } = null!;
         public double ToolPrice { get; set; }
+        public bool IsActive { get; set; }
     }
 }

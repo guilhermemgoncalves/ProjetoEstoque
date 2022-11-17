@@ -37,8 +37,14 @@ namespace Estoque.WebAPI.Controllers
         {
             return await _toolService.GetTools();
         }
-        
-         [HttpPost("Create")]
+        [HttpGet("GetById")]
+        public async Task<GetToolByIDResponse> GetToolById([FromQuery] Guid id)
+        {
+            return await _toolService.GetToolById(id);
+        }
+
+
+        [HttpPost("Create")]
         public async Task<CreateToolResponse> GetTools([FromBody] CreateToolRequest request)
         {            
             return await _toolService.CreateTool(request);

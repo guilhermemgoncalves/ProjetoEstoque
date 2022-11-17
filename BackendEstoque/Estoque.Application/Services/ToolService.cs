@@ -24,12 +24,12 @@ namespace Estoque.Application.Services
             {
                 Id = Guid.NewGuid(),
                 Category = request.ToolCategory,
-                DateRegistry = DateTime.Now,
+                DateRegistry = DateTime.UtcNow,
                 Description = request.ToolDescription,
                 IsActive = true,
                 Name = request.ToolName,
                 Price = request.ToolPrice,
-                
+                LastUpdate = DateTime.UtcNow,                
             };
 
             await _toolRepository.CreateAsync(toolEntity);
@@ -43,7 +43,30 @@ namespace Estoque.Application.Services
 
             return response;
         }
-        
+
+        public async Task<GetToolByIDResponse> GetToolById(Guid Id)
+        {
+            var tool = await _toolRepository.GetByIdAsync(Id);
+
+            BasicToolResponse basicTool = new()
+            {
+                Id = tool.Id,
+                Category = tool.Category,
+                Description = tool.Description,
+                IsActive=tool.IsActive,
+                Name = tool.Name,
+                Price= tool.Price,
+                Tags= tool.Tags,
+                LastUpdate = tool.LastUpdate
+            };
+
+            GetToolByIDResponse response = new ()
+            {
+                BasicToolResponse = basicTool
+            };
+
+            return await Task.FromResult(response);
+        }
 
         public async Task<GetToolsResponse> GetTools()
         {
@@ -60,16 +83,28 @@ namespace Estoque.Application.Services
                     Description= tool.Description,
                     Price  = tool.Price,
                     Tags = tool.Tags,
-                    IsActive = tool.IsActive
+                    IsActive = tool.IsActive,
+                    LastUpdate = tool.LastUpdate
                 };
                 response.BasicToolResponse.Add(basicToolResponse);
             }
             return await Task.FromResult(response);
          }
 
+        
+      
+
         public bool TestService()
         {
             return false;
+        }
+
+        public Task UpdateTool(Guid Id)
+        {
+
+
+
+            return Task.CompletedTask;
         }
     }
 }
