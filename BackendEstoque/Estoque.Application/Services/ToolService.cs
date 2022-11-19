@@ -46,18 +46,18 @@ namespace Estoque.Application.Services
 
         public async Task<GetToolByIDResponse> GetToolById(Guid Id)
         {
-            var tool = await _toolRepository.GetByIdAsync(Id);
+            var toolEntity = await _toolRepository.GetByIdAsync(Id);
 
             BasicToolResponse basicTool = new()
             {
-                Id = tool.Id,
-                Category = tool.Category,
-                Description = tool.Description,
-                IsActive=tool.IsActive,
-                Name = tool.Name,
-                Price= tool.Price,
-                Tags= tool.Tags,
-                LastUpdate = tool.LastUpdate
+                Id = toolEntity.Id,
+                Category = toolEntity.Category,
+                Description = toolEntity.Description,
+                IsActive=toolEntity.IsActive,
+                Name = toolEntity.Name,
+                Price= toolEntity.Price,
+                Tags= toolEntity.Tags,
+                LastUpdate = toolEntity.LastUpdate
             };
 
             GetToolByIDResponse response = new ()
@@ -99,12 +99,28 @@ namespace Estoque.Application.Services
             return false;
         }
 
-        public Task UpdateTool(Guid Id)
+        public async Task<UpdateToolResponse> UpdateTool(Guid Id, UpdateToolRequest request)
         {
+            var toolEntity = await _toolRepository.GetByIdAsync(Id);
+
+            BasicToolResponse basicTool = new()
+            {
+                Id = toolEntity.Id,
+                Category = toolEntity.Category,
+                Description = toolEntity.Description,
+                IsActive = toolEntity.IsActive,
+                Name = toolEntity.Name,
+                Price = toolEntity.Price,
+                Tags = toolEntity.Tags,
+                LastUpdate = toolEntity.LastUpdate
+            };         
 
 
 
-            return Task.CompletedTask;
+            var response = new UpdateToolResponse()
+            { LastUpdate = DateTime.UtcNow};
+
+            return await Task.FromResult(response);
         }
     }
 }

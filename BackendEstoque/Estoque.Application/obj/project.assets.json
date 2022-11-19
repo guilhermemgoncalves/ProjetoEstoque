@@ -8,27 +8,19 @@
           "System.Runtime.CompilerServices.Unsafe": "5.0.0"
         },
         "compile": {
-          "lib/netstandard2.1/MongoDB.Bson.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.1/MongoDB.Bson.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.1/MongoDB.Bson.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.1/MongoDB.Bson.dll": {}
         }
       },
       "System.Runtime.CompilerServices.Unsafe/5.0.0": {
         "type": "package",
         "compile": {
-          "ref/netstandard2.1/System.Runtime.CompilerServices.Unsafe.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard2.1/System.Runtime.CompilerServices.Unsafe.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {
-            "related": ".xml"
-          }
+          "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
         }
       },
       "Estoque.Domain/1.0.0": {
@@ -110,19 +102,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\g.marciano.goncalves\\.nuget\\packages\\": {}
+    "C:\\Users\\225587\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.Application\\Estoque.Application.csproj",
+      "projectUniqueName": "C:\\Projects\\Projeto Estoque\\BackendEstoque\\Estoque.Application\\Estoque.Application.csproj",
       "projectName": "Estoque.Application",
-      "projectPath": "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.Application\\Estoque.Application.csproj",
-      "packagesPath": "C:\\Users\\g.marciano.goncalves\\.nuget\\packages\\",
-      "outputPath": "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.Application\\obj\\",
+      "projectPath": "C:\\Projects\\Projeto Estoque\\BackendEstoque\\Estoque.Application\\Estoque.Application.csproj",
+      "packagesPath": "C:\\Users\\225587\\.nuget\\packages\\",
+      "outputPath": "C:\\Projects\\Projeto Estoque\\BackendEstoque\\Estoque.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\g.marciano.goncalves\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\225587\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -136,8 +128,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.Domain\\Estoque.Domain.csproj": {
-              "projectPath": "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.Domain\\Estoque.Domain.csproj"
+            "C:\\Projects\\Projeto Estoque\\BackendEstoque\\Estoque.Domain\\Estoque.Domain.csproj": {
+              "projectPath": "C:\\Projects\\Projeto Estoque\\BackendEstoque\\Estoque.Domain\\Estoque.Domain.csproj"
             }
           }
         }
@@ -157,8 +149,7 @@
           "net47",
           "net471",
           "net472",
-          "net48",
-          "net481"
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -167,7 +158,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.111\\RuntimeIdentifierGraph.json"
       }
     }
   }
