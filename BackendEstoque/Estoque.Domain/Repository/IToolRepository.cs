@@ -11,7 +11,7 @@ namespace Estoque.Domain.Repository
     {
         Task<List<Tool>> GetAsync();        
         Task<Tool> GetByIdAsync(Guid id);
-        Task UpdateByIdAsync(Tool newTool, Guid id);
+        Task<DateTime> UpdateByIdAsync(Tool newTool, Guid id);
         Task DeleteByIdAsync(Guid id);
         Task CreateAsync(Tool newTool);
     }

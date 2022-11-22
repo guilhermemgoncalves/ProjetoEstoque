@@ -43,9 +43,12 @@ namespace Estoque.Infra.Repositories.MongoDB
             return await _toolCollection.Find(_ => _.Id == id).FirstOrDefaultAsync();
         }
 
-        public Task UpdateByIdAsync(Tool newTool, Guid id)
+        public async Task<DateTime> UpdateByIdAsync(Tool newTool, Guid id)
         {
-            throw new NotImplementedException();
+            await _toolCollection.ReplaceOneAsync(_=>_.Id == id, newTool );
+            return newTool.LastUpdate;
         }
+
+       
     }
 }

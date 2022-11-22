@@ -34,7 +34,7 @@ namespace Estoque.Application.Services
 
             await _toolRepository.CreateAsync(toolEntity);
 
-            CreateToolResponse response = new CreateToolResponse()
+            CreateToolResponse response = new()
             {
                 Id= toolEntity.Id,
                 DateRegistry = toolEntity.DateRegistry,
@@ -46,23 +46,11 @@ namespace Estoque.Application.Services
 
         public async Task<GetToolByIDResponse> GetToolById(Guid Id)
         {
-            var toolEntity = await _toolRepository.GetByIdAsync(Id);
-
-            BasicToolResponse basicTool = new()
-            {
-                Id = toolEntity.Id,
-                Category = toolEntity.Category,
-                Description = toolEntity.Description,
-                IsActive=toolEntity.IsActive,
-                Name = toolEntity.Name,
-                Price= toolEntity.Price,
-                Tags= toolEntity.Tags,
-                LastUpdate = toolEntity.LastUpdate
-            };
+            var toolEntity = await _toolRepository.GetByIdAsync(Id);          
 
             GetToolByIDResponse response = new ()
             {
-                BasicToolResponse = basicTool
+                BasicToolResponse = FromEntityTOBasicResponse(toolEntity)
             };
 
             return await Task.FromResult(response);
@@ -71,38 +59,68 @@ namespace Estoque.Application.Services
         public async Task<GetToolsResponse> GetTools()
         {
             var toolsEntity = await _toolRepository.GetAsync();
-            GetToolsResponse response = new GetToolsResponse();
+            GetToolsResponse response = new();
 
             foreach (Tool tool in toolsEntity)
             {
-                BasicToolResponse basicToolResponse = new BasicToolResponse()
-                {
-                    Id= tool.Id,
-                    Name= tool.Name,
-                    Category= tool.Category,
-                    Description= tool.Description,
-                    Price  = tool.Price,
-                    Tags = tool.Tags,
-                    IsActive = tool.IsActive,
-                    LastUpdate = tool.LastUpdate
-                };
+                BasicToolResponse basicToolResponse = FromEntityTOBasicResponse(tool);
+                
                 response.BasicToolResponse.Add(basicToolResponse);
             }
             return await Task.FromResult(response);
-         }
+         }        
 
-        
-      
-
-        public bool TestService()
+        public async Task<UpdateToolResponse> UpdateTool(UpdateToolRequest request)
         {
-            return false;
+            var toolEntity = await _toolRepository.GetByIdAsync(request.Id);  
+
+            ProcessUpdate(request, toolEntity);
+
+            UpdateToolResponse response = new()
+            {
+                LastUpdate = await _toolRepository.UpdateByIdAsync(toolEntity, toolEntity.Id)
+            };
+
+            return await Task.FromResult(response);
         }
 
-        public async Task<UpdateToolResponse> UpdateTool(Guid Id, UpdateToolRequest request)
+        public async Task<UpdateToolResponse> DeleteTool(UpdateToolRequest request)
         {
-            var toolEntity = await _toolRepository.GetByIdAsync(Id);
+            var toolEntity = await _toolRepository.GetByIdAsync(request.Id);
 
+            InactivateProduct(toolEntity);
+
+            UpdateToolResponse response = new()
+            {
+                LastUpdate = await _toolRepository.UpdateByIdAsync(toolEntity, toolEntity.Id)
+            };
+
+            return await Task.FromResult(response);
+        }
+
+        private void ProcessUpdate(UpdateToolRequest request, Tool toolEntity)
+        {
+            if (!string.IsNullOrEmpty(request.ToolName) && request.ToolName != "string")
+            {
+                toolEntity.Name = request.ToolName;
+            }
+            if (!string.IsNullOrWhiteSpace(request.ToolDescription) && request.ToolDescription != "string") 
+            {
+                toolEntity.Description = request.ToolDescription;
+            }
+            if(!string.IsNullOrWhiteSpace(request.ToolCategory ) && request.ToolCategory != "string")
+            {
+                toolEntity.Category = request.ToolCategory;
+            }
+            if(request.ToolPrice != 0)
+            {
+                toolEntity.Price = request.ToolPrice;
+            }
+            toolEntity.LastUpdate = DateTime.UtcNow;            
+        }
+
+        private static BasicToolResponse FromEntityTOBasicResponse(Tool toolEntity)
+        {
             BasicToolResponse basicTool = new()
             {
                 Id = toolEntity.Id,
@@ -113,14 +131,38 @@ namespace Estoque.Application.Services
                 Price = toolEntity.Price,
                 Tags = toolEntity.Tags,
                 LastUpdate = toolEntity.LastUpdate
-            };         
+            };
 
+            return basicTool;
+        }
 
+        private void InactivateProduct(Tool toolEntity)
+        {
+            toolEntity.IsActive = false;
+            toolEntity.LastUpdate = DateTime.UtcNow;
+        }
+        private void ActivateProduct(Tool toolEntity)
+        {
+            toolEntity.IsActive = true;
+            toolEntity.LastUpdate = DateTime.UtcNow;
+        }      
+        
 
-            var response = new UpdateToolResponse()
-            { LastUpdate = DateTime.UtcNow};
+        public async Task ActivateAll()
+        {
+            var toolsEntity = await _toolRepository.GetAsync();
+            GetToolsResponse response = new();
 
-            return await Task.FromResult(response);
+            foreach (Tool tool in toolsEntity)
+            {
+                BasicToolResponse basicToolResponse = FromEntityTOBasicResponse(tool);
+                if(!tool.IsActive)
+                ActivateProduct(tool);
+                await _toolRepository.UpdateByIdAsync(tool, tool.Id);
+
+                Console.WriteLine(tool.Id);
+
+            }
         }
     }
 }

@@ -18,19 +18,7 @@ namespace Estoque.WebAPI.Controllers
         {
             _toolService = toolService;
         }
-
-        [HttpGet("testeapi")]       
-        public string Testeapi()
-        {
-            var teste = false;
-             teste =_toolService.TestService();
-
-            if (teste) { 
-            return "Api funcionando";            
-            }
-
-            return "Não funcionou";
-        }
+      
 
         [HttpGet("GetAll")]
         public async Task<GetToolsResponse> GetAllTools()       
@@ -50,6 +38,25 @@ namespace Estoque.WebAPI.Controllers
             return await _toolService.CreateTool(request);
         }
 
-        
+        [HttpPost("Update")]
+        public async Task<UpdateToolResponse> UpdateTools([FromBody] UpdateToolRequest request)
+        {
+            return await _toolService.UpdateTool(request);
+        }
+
+        [HttpDelete("Delete")]
+        public async Task<UpdateToolResponse> DeleteTool([FromBody] UpdateToolRequest request)
+        {
+            return await _toolService.DeleteTool(request);
+        }
+
+        [HttpGet("ActivateAll")]
+        public async Task<string> GetActivateAll()
+        {
+            await _toolService.ActivateAll();
+            return "Todas as ferramentas foram reativadas no catalogo";
+        }
+
+
     }
 }

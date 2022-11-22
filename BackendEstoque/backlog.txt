@@ -1,0 +1,8 @@
+21/11 -
+
+Alterar a request e response do metodo delete
+Agora trazer resultados com http messages
+Inserir metodo de inserir tags
+Criar um metodo que simplifica create tool
+
+

@@ -7,9 +7,9 @@ namespace Estoque.Application.Interfaces
     {
         Task<GetToolsResponse> GetTools();
         Task<CreateToolResponse> CreateTool(CreateToolRequest request);
-        public Task<GetToolByIDResponse> GetToolById(Guid Id);
-        bool TestService();
-        public Task UpdateTool(Guid Id);
-      
+        Task<GetToolByIDResponse> GetToolById(Guid Id);      
+        Task<UpdateToolResponse> UpdateTool(UpdateToolRequest request);
+        Task<UpdateToolResponse> DeleteTool(UpdateToolRequest request);
+        Task ActivateAll();
     }
 }
