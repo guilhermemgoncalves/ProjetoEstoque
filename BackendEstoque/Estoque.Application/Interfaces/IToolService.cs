@@ -5,11 +5,11 @@ namespace Estoque.Application.Interfaces
 {
     public interface IToolService
     {
-        Task<GetToolsResponse> GetTools();
+        Task<GetToolsResponse> GetTools(string toolStatus);
         Task<CreateToolResponse> CreateTool(CreateToolRequest request);
-        Task<GetToolByIDResponse> GetToolById(Guid Id);      
+        Task<GetToolByIDResponse> GetToolById(Guid id);      
         Task<UpdateToolResponse> UpdateTool(UpdateToolRequest request);
-        Task<UpdateToolResponse> DeleteTool(UpdateToolRequest request);
+        Task<UpdateToolResponse> DeleteTool(Guid id);
         Task ActivateAll();
     }
 }

@@ -18,24 +18,26 @@ namespace Estoque.WebAPI.Controllers
         {
             _toolService = toolService;
         }
-      
 
         [HttpGet("GetAll")]
-        public async Task<GetToolsResponse> GetAllTools()       
+        public async Task<GetToolsResponse> GetAllTools([FromQuery] string toolStatus)       
         {
-            return await _toolService.GetTools();
+            return await _toolService.GetTools(toolStatus);
         }
+
+
         [HttpGet("GetById")]
         public async Task<GetToolByIDResponse> GetToolById([FromQuery] Guid id)
         {
             return await _toolService.GetToolById(id);
         }
-
+      
 
         [HttpPost("Create")]
-        public async Task<CreateToolResponse> GetTools([FromBody] CreateToolRequest request)
+        public async Task<ActionResult> GetTools([FromBody] CreateToolRequest request)
         {            
-            return await _toolService.CreateTool(request);
+            var response = await _toolService.CreateTool(request);
+            return Created("teste",response);
         }
 
         [HttpPost("Update")]
@@ -45,17 +47,19 @@ namespace Estoque.WebAPI.Controllers
         }
 
         [HttpDelete("Delete")]
-        public async Task<UpdateToolResponse> DeleteTool([FromBody] UpdateToolRequest request)
+        public async Task<ActionResult> DeleteTool([FromBody] Guid guid)
         {
-            return await _toolService.DeleteTool(request);
+            var response = await _toolService.DeleteTool(guid);
+            return Ok(response);
         }
 
         [HttpGet("ActivateAll")]
-        public async Task<string> GetActivateAll()
+        public async Task<IResult> GetActivateAll()
         {
             await _toolService.ActivateAll();
-            return "Todas as ferramentas foram reativadas no catalogo";
+            return Results.Ok();
         }
+
 
 
     }

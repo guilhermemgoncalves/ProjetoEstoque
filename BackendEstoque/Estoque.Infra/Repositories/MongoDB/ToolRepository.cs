@@ -20,7 +20,6 @@ namespace Estoque.Infra.Repositories.MongoDB
             var mongoClient = new MongoClient(estoqueSettings.Value.ConnectionString);
             var mongoDatabase = mongoClient.GetDatabase(estoqueSettings.Value.DatabaseName);
             _toolCollection = mongoDatabase.GetCollection<Tool>(estoqueSettings.Value.ToolCollectionName);
-
         }
 
         public async Task CreateAsync(Tool newTool)

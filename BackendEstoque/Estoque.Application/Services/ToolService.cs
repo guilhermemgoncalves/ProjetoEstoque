@@ -56,16 +56,30 @@ namespace Estoque.Application.Services
             return await Task.FromResult(response);
         }
 
-        public async Task<GetToolsResponse> GetTools()
+        public async Task<GetToolsResponse> GetTools(string toolStatus)
         {
+
             var toolsEntity = await _toolRepository.GetAsync();
             GetToolsResponse response = new();
 
             foreach (Tool tool in toolsEntity)
             {
-                BasicToolResponse basicToolResponse = FromEntityTOBasicResponse(tool);
+                BasicToolResponse basicToolResponse = FromEntityTOBasicResponse(tool); 
                 
-                response.BasicToolResponse.Add(basicToolResponse);
+                if(toolStatus == "true")
+                {
+                    if(basicToolResponse.IsActive == true)
+                    {
+                        response.BasicToolResponse.Add(basicToolResponse);
+                    }
+                }
+                if (toolStatus == "false")
+                {
+                    if (basicToolResponse.IsActive == false)
+                    {
+                        response.BasicToolResponse.Add(basicToolResponse);
+                    }
+                }
             }
             return await Task.FromResult(response);
          }        
@@ -84,9 +98,9 @@ namespace Estoque.Application.Services
             return await Task.FromResult(response);
         }
 
-        public async Task<UpdateToolResponse> DeleteTool(UpdateToolRequest request)
+        public async Task<UpdateToolResponse> DeleteTool(Guid id)
         {
-            var toolEntity = await _toolRepository.GetByIdAsync(request.Id);
+            var toolEntity = await _toolRepository.GetByIdAsync(id);
 
             InactivateProduct(toolEntity);
 
@@ -121,6 +135,7 @@ namespace Estoque.Application.Services
 
         private static BasicToolResponse FromEntityTOBasicResponse(Tool toolEntity)
         {
+            
             BasicToolResponse basicTool = new()
             {
                 Id = toolEntity.Id,
@@ -150,18 +165,17 @@ namespace Estoque.Application.Services
 
         public async Task ActivateAll()
         {
-            var toolsEntity = await _toolRepository.GetAsync();
-            GetToolsResponse response = new();
+            var toolsEntity = await _toolRepository.GetAsync();           
 
             foreach (Tool tool in toolsEntity)
             {
-                BasicToolResponse basicToolResponse = FromEntityTOBasicResponse(tool);
-                if(!tool.IsActive)
-                ActivateProduct(tool);
-                await _toolRepository.UpdateByIdAsync(tool, tool.Id);
-
-                Console.WriteLine(tool.Id);
-
+                FromEntityTOBasicResponse(tool);
+                if (!tool.IsActive)
+                {
+                    ActivateProduct(tool);
+                    await _toolRepository.UpdateByIdAsync(tool, tool.Id);
+                    Console.WriteLine(tool.Id);
+                }
             }
         }
     }
