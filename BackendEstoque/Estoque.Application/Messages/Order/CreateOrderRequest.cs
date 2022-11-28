@@ -8,10 +8,9 @@ using System.Threading.Tasks;
 namespace Estoque.Application.Messages.Order
 {
     public class CreateOrderRequest
-    {
-        public DateTime OrderDate { get; set; }
+    {     
         public List<ToolOrder> OrderTools { get; set; } = new ();
-        public Guid CostuemerId { get; set; }
+        public string CostuemerId { get; set; } = null!;
 
     }
 }

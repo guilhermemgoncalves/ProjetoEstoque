@@ -9,8 +9,8 @@ namespace Estoque.Domain.Repository
 {
     public interface IOrderRepository
     {
-        Task<List<Order>> GetAsync();
-        Task<Order> GetByIdAsync(Guid id);              
-        Task CreateAsync(Order newOrder);
+        Task<List<Orders>> GetAsync();
+        Task<Orders> GetByIdAsync(Guid id);              
+        Task CreateAsync(Orders newOrder);
     }
 }

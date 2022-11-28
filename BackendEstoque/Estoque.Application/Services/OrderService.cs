@@ -28,15 +28,15 @@ namespace Estoque.Application.Services
             return true;
         }
 
-        private Order OrderToEntity(CreateOrderRequest request)
+        private Orders OrderToEntity(CreateOrderRequest request)
         {
 
-            var OrderEntity = new Order()
+            var OrderEntity = new Orders()
             {
                 Id = Guid.NewGuid(),
                 CostumerId = request.CostuemerId,
-                OrderDate = request.OrderDate,
-                 OrderTools =  request.OrderTools
+                OrderDate = DateTime.UtcNow,
+                OrderTools =  request.OrderTools
             };
 
             return OrderEntity;

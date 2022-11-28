@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Estoque.Domain.Entities
 {
-    public class Order
+    public class Orders
     {
         [BsonId]
         [BsonRepresentation(BsonType.String)]
@@ -17,14 +17,14 @@ namespace Estoque.Domain.Entities
         public DateTime OrderDate { get; set; }
         public DateTime DueDate { get; set; }
         public List<ToolOrder> OrderTools { get; set; } = new List<ToolOrder>();
-        public Guid CostumerId { get; set; } 
+        public string CostumerId { get; set; } = null!;
 
     }
 
     public class ToolOrder
     {
-        public Guid ToolId { get; set; }
-        public int Amount { get; set; }
+        public string ToolId { get; set; } = null!;
+        public int Amount { get; set; } 
     }
 
 
