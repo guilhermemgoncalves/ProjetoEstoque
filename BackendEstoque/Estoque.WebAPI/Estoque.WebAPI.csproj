@@ -7,11 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="NSwag.Annotations" Version="13.17.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+	<PackageReference Include="Microsoft.Azure.WebJobs.Extensions.OpenApi" Version="1.4.0" />
+	<PackageReference Include="Azure.Storage.Blobs" Version="12.13.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Estoque.Application\Estoque.Application.csproj" />
+    <ProjectReference Include="..\Estoque.Infra\Estoque.Infra.csproj" />
   </ItemGroup>
 
 </Project>

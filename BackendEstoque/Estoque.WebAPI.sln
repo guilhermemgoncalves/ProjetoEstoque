@@ -5,7 +5,11 @@ VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Estoque.WebAPI", "Estoque.WebAPI\Estoque.WebAPI.csproj", "{FE62B7D9-907D-4D40-865B-43574F713F0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Estoque.Application", "Estoque.Application\Estoque.Application.csproj", "{1941E8E6-7DE2-4CF1-B031-2E6F3C5BF63F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Estoque.Application", "Estoque.Application\Estoque.Application.csproj", "{1941E8E6-7DE2-4CF1-B031-2E6F3C5BF63F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Estoque.Domain", "Estoque.Domain\Estoque.Domain.csproj", "{E9123268-8708-4A59-A515-504B97DB3059}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Estoque.Infra", "Estoque.Infra\Estoque.Infra.csproj", "{2EE1F0F1-0E64-4B22-87AB-FA833AA22F95}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{1941E8E6-7DE2-4CF1-B031-2E6F3C5BF63F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1941E8E6-7DE2-4CF1-B031-2E6F3C5BF63F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1941E8E6-7DE2-4CF1-B031-2E6F3C5BF63F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9123268-8708-4A59-A515-504B97DB3059}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9123268-8708-4A59-A515-504B97DB3059}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9123268-8708-4A59-A515-504B97DB3059}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9123268-8708-4A59-A515-504B97DB3059}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EE1F0F1-0E64-4B22-87AB-FA833AA22F95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EE1F0F1-0E64-4B22-87AB-FA833AA22F95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EE1F0F1-0E64-4B22-87AB-FA833AA22F95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EE1F0F1-0E64-4B22-87AB-FA833AA22F95}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
