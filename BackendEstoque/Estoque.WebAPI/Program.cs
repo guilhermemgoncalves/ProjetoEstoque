@@ -12,6 +12,7 @@ builder.Services.Configure<EstoqueDbSettings>(
     );
 
 builder.Services.AddSingleton<IToolRepository, ToolRepository>();
+builder.Services.AddSingleton<IOrderRepository, OrderRepository>();
 
 // Add services to the container.
 
@@ -21,6 +22,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IToolService, ToolService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -11,5 +11,6 @@ namespace Estoque.Infra.Settings
         public string ConnectionString { get; set; } = null!;
         public string DatabaseName { get; set; } = null!;
         public string ToolCollectionName { get; set; } = null!;
+        public string OrderCollectionName { get; set; } = null!;
     }
 }

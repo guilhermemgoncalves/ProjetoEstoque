@@ -11,42 +11,33 @@ using System.Threading.Tasks;
 
 namespace Estoque.Infra.Repositories.MongoDB
 {
-    public class ToolRepository : IToolRepository
+    public class OrderRepository : IOrderRepository
     {
-        private readonly IMongoCollection<Tool> _toolCollection;
+        private readonly IMongoCollection<Order> _toolCollection;
 
-        public ToolRepository(IOptions<EstoqueDbSettings> estoqueSettings)
+        public OrderRepository(IOptions<EstoqueDbSettings> estoqueSettings)
         {
             var mongoClient = new MongoClient(estoqueSettings.Value.ConnectionString);
             var mongoDatabase = mongoClient.GetDatabase(estoqueSettings.Value.DatabaseName);
-            _toolCollection = mongoDatabase.GetCollection<Tool>(estoqueSettings.Value.ToolCollectionName);
+            _toolCollection = mongoDatabase.GetCollection<Order>(estoqueSettings.Value.OrderCollectionName);
             
         }
 
-        public async Task CreateAsync(Tool newTool)
+        public async Task CreateAsync(Order newTool)
         {
             await _toolCollection.InsertOneAsync(newTool);
         }
 
-        public Task DeleteByIdAsync(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<List<Tool>> GetAsync()
+        public async Task<List<Order>> GetAsync()
         {
             return await _toolCollection.Find(_ => true).ToListAsync();
         }
 
-        public async Task<Tool> GetByIdAsync(Guid id)
+        public async Task<Order> GetByIdAsync(Guid id)
         {
             return await _toolCollection.Find(_ => _.Id == id).FirstOrDefaultAsync();
         }
 
-        public async Task<DateTime> UpdateByIdAsync(Tool newTool, Guid id)
-        {
-            await _toolCollection.ReplaceOneAsync(_=>_.Id == id, newTool );
-            return newTool.LastUpdate;
-        }      
+      
     }
 }
