@@ -1,5 +1,6 @@
 ﻿using Estoque.Application.Interfaces;
 using Estoque.Application.Messages.Order;
+using Estoque.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -17,9 +18,9 @@ namespace Estoque.WebAPI.Controllers
         }
         // GET: api/<OrderController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<List<Orders>> GetOrders()
         {
-            return new string[] { "value1", "value2" };
+            return await _orderService.GetAll();
         }
 
         // GET api/<OrderController>/5

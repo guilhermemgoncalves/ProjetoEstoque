@@ -28,6 +28,16 @@ namespace Estoque.Application.Services
             return true;
         }
 
+        public async Task<List<Orders>>GetAll()
+        {
+
+            var ordersEntity = await _orderRepository.GetAsync();
+            return ordersEntity;
+
+        }
+            
+
+
         private Orders OrderToEntity(CreateOrderRequest request)
         {
 
