@@ -9,7 +9,7 @@ namespace Estoque.Application.Interfaces
 {
     public interface ICostumerService
     {
-        Task<bool> CreateCostumer();
+        Task<bool> CreateCostumer(Costumer costumer);
         Task<List<Costumer>> GetAll();
         Task<Costumer> GetById(string prontuario);
     }

@@ -17,9 +17,11 @@ namespace Estoque.Application.Services
             _costumerRepository = costumerRepository;
         }
 
-        public Task<bool> CreateCostumer()
+        public async Task<bool> CreateCostumer(Costumer costumer)
         {
-            throw new NotImplementedException();
+            await _costumerRepository.CreateAsync(costumer);
+
+            return true;
         }
 
         public Task<List<Costumer>> GetAll()
