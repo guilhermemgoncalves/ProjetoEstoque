@@ -12,5 +12,7 @@ namespace Estoque.Application.Interfaces
     {
         Task<bool> CreateOrder(CreateOrderRequest request);
         Task<List<Orders>>GetAll();
+        Task<Orders> GetById(Guid id);
+
     }
 }

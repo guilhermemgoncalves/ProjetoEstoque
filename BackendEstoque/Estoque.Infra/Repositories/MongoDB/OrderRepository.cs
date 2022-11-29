@@ -38,6 +38,6 @@ namespace Estoque.Infra.Repositories.MongoDB
             return await _orderCollection.Find(_ => _.Id == id).FirstOrDefaultAsync();
         }
 
-      
+
     }
 }

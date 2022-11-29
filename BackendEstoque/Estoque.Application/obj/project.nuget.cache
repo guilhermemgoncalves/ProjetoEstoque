@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "YgPvyGafrxYiBMamTQNRrEL8KNa0xJrvD2tFNum8ke7tyZnzyFZPRGukpE2s7gSb46aCs+OYFhUPiz2YbFov0A==",
+  "dgSpecHash": "1nwZSk48dZZ38WXlIfc5O0A01/7dv+iH0YrpB6ifEVWXki9tA4GP5LymdVKVQGJZa2NKFyFkLwYWGpxWwVpiXg==",
   "success": true,
-  "projectFilePath": "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.Application\\Estoque.Application.csproj",
+  "projectFilePath": "C:\\Projects\\ProjetoEstoque\\BackendEstoque\\Estoque.Application\\Estoque.Application.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\g.marciano.goncalves\\.nuget\\packages\\mongodb.bson\\2.18.0\\mongodb.bson.2.18.0.nupkg.sha512",
-    "C:\\Users\\g.marciano.goncalves\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
+    "C:\\Users\\225587\\.nuget\\packages\\mongodb.bson\\2.18.0\\mongodb.bson.2.18.0.nupkg.sha512",
+    "C:\\Users\\225587\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }

@@ -18,16 +18,19 @@ namespace Estoque.WebAPI.Controllers
         }
         // GET: api/<OrderController>
         [HttpGet]
-        public async Task<List<Orders>> GetOrders()
+        public async Task<IResult> GetOrders()
         {
-            return await _orderService.GetAll();
+            var response = await _orderService.GetAll();
+            return Results.Ok(response);
         }
 
         // GET api/<OrderController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<IResult>Get(Guid id)
         {
-            return "value";
+            var response = await _orderService.GetById(id);
+
+            return Results.Ok(response);
         }
 
         // POST api/<OrderController>

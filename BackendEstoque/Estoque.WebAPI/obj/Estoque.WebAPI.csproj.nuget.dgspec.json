@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.WebAPI\\Estoque.WebAPI.csproj": {}
+    "C:\\Projects\\ProjetoEstoque\\BackendEstoque\\Estoque.WebAPI\\Estoque.WebAPI.csproj": {}
   },
   "projects": {
-    "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.Application\\Estoque.Application.csproj": {
+    "C:\\Projects\\ProjetoEstoque\\BackendEstoque\\Estoque.Application\\Estoque.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.Application\\Estoque.Application.csproj",
+        "projectUniqueName": "C:\\Projects\\ProjetoEstoque\\BackendEstoque\\Estoque.Application\\Estoque.Application.csproj",
         "projectName": "Estoque.Application",
-        "projectPath": "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.Application\\Estoque.Application.csproj",
-        "packagesPath": "C:\\Users\\g.marciano.goncalves\\.nuget\\packages\\",
-        "outputPath": "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.Application\\obj\\",
+        "projectPath": "C:\\Projects\\ProjetoEstoque\\BackendEstoque\\Estoque.Application\\Estoque.Application.csproj",
+        "packagesPath": "C:\\Users\\225587\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\ProjetoEstoque\\BackendEstoque\\Estoque.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\g.marciano.goncalves\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\225587\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.Domain\\Estoque.Domain.csproj": {
-                "projectPath": "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.Domain\\Estoque.Domain.csproj"
+              "C:\\Projects\\ProjetoEstoque\\BackendEstoque\\Estoque.Domain\\Estoque.Domain.csproj": {
+                "projectPath": "C:\\Projects\\ProjetoEstoque\\BackendEstoque\\Estoque.Domain\\Estoque.Domain.csproj"
               }
             }
           }
@@ -49,8 +49,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -59,21 +58,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.111\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.Domain\\Estoque.Domain.csproj": {
+    "C:\\Projects\\ProjetoEstoque\\BackendEstoque\\Estoque.Domain\\Estoque.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.Domain\\Estoque.Domain.csproj",
+        "projectUniqueName": "C:\\Projects\\ProjetoEstoque\\BackendEstoque\\Estoque.Domain\\Estoque.Domain.csproj",
         "projectName": "Estoque.Domain",
-        "projectPath": "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.Domain\\Estoque.Domain.csproj",
-        "packagesPath": "C:\\Users\\g.marciano.goncalves\\.nuget\\packages\\",
-        "outputPath": "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.Domain\\obj\\",
+        "projectPath": "C:\\Projects\\ProjetoEstoque\\BackendEstoque\\Estoque.Domain\\Estoque.Domain.csproj",
+        "packagesPath": "C:\\Users\\225587\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\ProjetoEstoque\\BackendEstoque\\Estoque.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\g.marciano.goncalves\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\225587\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -110,8 +109,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -120,21 +118,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.111\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.Infra\\Estoque.Infra.csproj": {
+    "C:\\Projects\\ProjetoEstoque\\BackendEstoque\\Estoque.Infra\\Estoque.Infra.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.Infra\\Estoque.Infra.csproj",
+        "projectUniqueName": "C:\\Projects\\ProjetoEstoque\\BackendEstoque\\Estoque.Infra\\Estoque.Infra.csproj",
         "projectName": "Estoque.Infra",
-        "projectPath": "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.Infra\\Estoque.Infra.csproj",
-        "packagesPath": "C:\\Users\\g.marciano.goncalves\\.nuget\\packages\\",
-        "outputPath": "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.Infra\\obj\\",
+        "projectPath": "C:\\Projects\\ProjetoEstoque\\BackendEstoque\\Estoque.Infra\\Estoque.Infra.csproj",
+        "packagesPath": "C:\\Users\\225587\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\ProjetoEstoque\\BackendEstoque\\Estoque.Infra\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\g.marciano.goncalves\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\225587\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -148,8 +146,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.Domain\\Estoque.Domain.csproj": {
-                "projectPath": "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.Domain\\Estoque.Domain.csproj"
+              "C:\\Projects\\ProjetoEstoque\\BackendEstoque\\Estoque.Domain\\Estoque.Domain.csproj": {
+                "projectPath": "C:\\Projects\\ProjetoEstoque\\BackendEstoque\\Estoque.Domain\\Estoque.Domain.csproj"
               }
             }
           }
@@ -179,8 +177,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -189,21 +186,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.111\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.WebAPI\\Estoque.WebAPI.csproj": {
+    "C:\\Projects\\ProjetoEstoque\\BackendEstoque\\Estoque.WebAPI\\Estoque.WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.WebAPI\\Estoque.WebAPI.csproj",
+        "projectUniqueName": "C:\\Projects\\ProjetoEstoque\\BackendEstoque\\Estoque.WebAPI\\Estoque.WebAPI.csproj",
         "projectName": "Estoque.WebAPI",
-        "projectPath": "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.WebAPI\\Estoque.WebAPI.csproj",
-        "packagesPath": "C:\\Users\\g.marciano.goncalves\\.nuget\\packages\\",
-        "outputPath": "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.WebAPI\\obj\\",
+        "projectPath": "C:\\Projects\\ProjetoEstoque\\BackendEstoque\\Estoque.WebAPI\\Estoque.WebAPI.csproj",
+        "packagesPath": "C:\\Users\\225587\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\ProjetoEstoque\\BackendEstoque\\Estoque.WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\g.marciano.goncalves\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\225587\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -217,11 +214,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.Application\\Estoque.Application.csproj": {
-                "projectPath": "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.Application\\Estoque.Application.csproj"
+              "C:\\Projects\\ProjetoEstoque\\BackendEstoque\\Estoque.Application\\Estoque.Application.csproj": {
+                "projectPath": "C:\\Projects\\ProjetoEstoque\\BackendEstoque\\Estoque.Application\\Estoque.Application.csproj"
               },
-              "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.Infra\\Estoque.Infra.csproj": {
-                "projectPath": "C:\\projects\\estoque\\ProjetoEstoque\\BackendEstoque\\Estoque.Infra\\Estoque.Infra.csproj"
+              "C:\\Projects\\ProjetoEstoque\\BackendEstoque\\Estoque.Infra\\Estoque.Infra.csproj": {
+                "projectPath": "C:\\Projects\\ProjetoEstoque\\BackendEstoque\\Estoque.Infra\\Estoque.Infra.csproj"
               }
             }
           }
@@ -259,8 +256,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -272,7 +268,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.111\\RuntimeIdentifierGraph.json"
         }
       }
     }

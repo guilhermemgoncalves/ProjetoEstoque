@@ -35,12 +35,14 @@ namespace Estoque.Application.Services
             return ordersEntity;
 
         }
-            
-
+        public async Task<Orders> GetById(Guid id)
+        {
+            var orderEntity = await _orderRepository.GetByIdAsync(id);
+            return orderEntity;
+        }
 
         private Orders OrderToEntity(CreateOrderRequest request)
         {
-
             var OrderEntity = new Orders()
             {
                 Id = Guid.NewGuid(),
