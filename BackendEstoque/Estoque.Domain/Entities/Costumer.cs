@@ -12,7 +12,7 @@ namespace Estoque.Domain.Entities
     {
         [BsonId]
         [BsonRepresentation(BsonType.String)]
-        [BsonElement("prontuario")]
+        [BsonElement("_id")]
         public string Prontuario { get; set; } = null!;
         public string Nome { get; set; } = null!;
         public string Type { get; set; } = null!;

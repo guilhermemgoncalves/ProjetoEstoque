@@ -24,14 +24,14 @@ namespace Estoque.Application.Services
             return true;
         }
 
-        public Task<List<Costumer>> GetAll()
+        public async Task<List<Costumer>> GetAll()
         {
-            throw new NotImplementedException();
+            return await _costumerRepository.GetAsync();
         }
 
-        public Task<Costumer> GetById(string prontuario)
+        public async Task<Costumer> GetById(string prontuario)
         {
-            throw new NotImplementedException();
+            return await _costumerRepository.GetByIdAsync(prontuario);
         }
     }
 }

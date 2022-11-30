@@ -18,16 +18,16 @@ namespace Estoque.WebAPI.Controllers
         }
         // GET: api/<ValuesController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<IResult> Get()
         {
-            return new string[] { "value1", "value2" };
+            return  Results.Ok( await _costumerService.GetAll());
         }
 
         // GET api/<ValuesController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<IResult> Get(string id)
         {
-            return "value";
+            return Results.Ok(await _costumerService.GetById(id));
         }
 
         // POST api/<ValuesController>
