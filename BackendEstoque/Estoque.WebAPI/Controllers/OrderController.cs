@@ -42,11 +42,11 @@ namespace Estoque.WebAPI.Controllers
             return Results.Ok(response) ;
         }
 
-        // PUT api/<OrderController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
+        //// PUT api/<OrderController>/5
+        //[HttpPut("{id}")]
+        //public void Put(int id, [FromBody] string value)
+        //{
 
-        }    
+        //}
     }
 }
