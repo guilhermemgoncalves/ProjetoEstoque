@@ -1,0 +1,21 @@
+mat-toolbar{
+  background: #1b9d45;
+  background: linear-gradient(30deg,#1b9d45 0%, #bbe2c7 80%);
+  background: -webkit-linear-gradient(30deg,#1b9d45 0%, #bbe2c7 80%);
+  background: -moz-linear-gradient(30deg,#1b9d45 0%, #bbe2c7 80%);
+
+  display: flex;
+  justify-content: space-between;
+
+  color: aliceblue;
+}
+
+.menu-icon
+{
+  cursor: pointer;
+  margin: 0.8rem;
+}
+
+p{
+  cursor: pointer;
+}
