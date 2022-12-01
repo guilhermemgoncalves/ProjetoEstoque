@@ -194,3 +194,4 @@ BackendEstoque/Estoque.Application/obj/Debug/net6.0/Estoque.Application.Generate
 BackendEstoque/Estoque.WebAPI/obj/Debug/net6.0/Estoque.WebAPI.GeneratedMSBuildEditorConfig.editorconfig
 BackendEstoque/.vscode/tasks.json
 BackendEstoque/.vscode/launch.json
+BackendEstoque/Estoque.WebAPI/bin/Debug/net6.0/appsettings.json

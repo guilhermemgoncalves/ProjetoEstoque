@@ -22,7 +22,7 @@ namespace Estoque.Application.Services
 
         public async Task<bool> CreateOrder(CreateOrderRequest request)
         {
-             var OrderEntity = OrderToEntity(request);                
+            var OrderEntity = OrderToEntity(request);                
             await _orderRepository.CreateAsync(OrderEntity);
 
             return true;
@@ -30,10 +30,8 @@ namespace Estoque.Application.Services
 
         public async Task<List<Orders>>GetAll()
         {
-
             var ordersEntity = await _orderRepository.GetAsync();
             return ordersEntity;
-
         }
         public async Task<Orders> GetById(Guid id)
         {
