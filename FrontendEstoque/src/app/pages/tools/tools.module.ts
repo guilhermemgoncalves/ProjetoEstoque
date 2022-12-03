@@ -2,6 +2,7 @@ import { ToolsRoutingModule } from './tools-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ToolsComponent } from './tools.component';
+import { HomeRoutingModule } from '../home/home-routing.module';
 
 
 
@@ -11,7 +12,8 @@ import { ToolsComponent } from './tools.component';
   ],
   imports: [
     CommonModule,
-    ToolsRoutingModule
+    ToolsRoutingModule,
+    HomeRoutingModule
   ],
   exports:[
     ToolsComponent

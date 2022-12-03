@@ -6,7 +6,8 @@ import { MatIconModule } from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
 
 import { HeaderComponent } from './header.component';
-import {MatButtonModule} from '@angular/material/button';
+import {  MatButtonModule} from '@angular/material/button';
+import { HomeRoutingModule } from 'src/app/pages/home/home-routing.module';
 
 
 @NgModule({
@@ -18,7 +19,9 @@ import {MatButtonModule} from '@angular/material/button';
     MatToolbarModule,
     MatIconModule,
     MatMenuModule,
-    MatButtonModule
+    MatButtonModule,
+    HomeRoutingModule,
+    MatMenuModule
   ],
   exports:[
     HeaderComponent
