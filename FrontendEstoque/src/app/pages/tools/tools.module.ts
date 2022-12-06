@@ -5,7 +5,7 @@ import { ToolsComponent } from './tools.component';
 import { HomeRoutingModule } from '../home/home-routing.module';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
-
+import { AccordionModule } from 'ngx-bootstrap/accordion';
 
 
 @NgModule({
@@ -16,7 +16,8 @@ import { ButtonsModule } from 'ngx-bootstrap/buttons';
     CommonModule,
     ToolsRoutingModule,
     HomeRoutingModule,
-    ButtonsModule.forRoot()
+    ButtonsModule.forRoot(),
+    AccordionModule.forRoot(),
     ],
   exports:[
     ToolsComponent

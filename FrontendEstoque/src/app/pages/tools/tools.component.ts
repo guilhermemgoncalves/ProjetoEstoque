@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToolsComponent implements OnInit {
 
+  arrayTest: number[] = [1,2,3,4]
+
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }
