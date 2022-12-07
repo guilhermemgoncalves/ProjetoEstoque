@@ -10,7 +10,13 @@ import { HeaderModule } from '../header/header.module';
 
 @NgModule({
   declarations: [BaseLayoutComponent],
-  imports: [CommonModule, HeaderModule, FooterModule, SidenavModule, RouterModule],
-  exports: [BaseLayoutComponent],
+  imports: [
+    CommonModule,
+    HeaderModule,
+    FooterModule,
+    SidenavModule,
+    RouterModule],
+
+    exports: [BaseLayoutComponent],
 })
 export class BaseLayoutModule {}
