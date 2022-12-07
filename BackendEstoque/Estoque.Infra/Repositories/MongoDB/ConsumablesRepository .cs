@@ -23,7 +23,8 @@ namespace Estoque.Infra.Repositories.MongoDB
             
         }
 
-        public async Task CreateAsync(Consumables newConsumables)
+        public async Task CreateAsync(Consumables
+            newConsumables)
         {
             await _consumablesCollection.InsertOneAsync(newConsumables);
         }

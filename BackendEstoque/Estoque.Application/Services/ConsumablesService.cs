@@ -1,9 +1,12 @@
-﻿using Estoque.Application.Interfaces;
+﻿
+using CsvHelper;
+using Estoque.Application.Interfaces;
 using Estoque.Application.Messages;
 using Estoque.Domain.Entities;
 using Estoque.Domain.Repository;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +23,7 @@ namespace Estoque.Application.Services
 
         public async Task<CreateToolResponse> CreateTool(CreateToolRequest request)
         {
-            var consumablesEntity = new Consumables()
+            var consumablesEntity = new Domain.Entities.Consumables()
             {
                 Id = Guid.NewGuid(),
                 Category = request.ToolCategory,
@@ -61,7 +64,7 @@ namespace Estoque.Application.Services
             var consumablesEntity = await _consumablesRepository.GetAsync();
             GetToolsResponse response = new();
 
-            foreach (Consumables consumables in consumablesEntity)
+            foreach (Domain.Entities.Consumables consumables in consumablesEntity)
             {
                 BasicToolResponse basicToolResponse = FromEntityTOBasicResponse(consumables);
 
@@ -111,7 +114,7 @@ namespace Estoque.Application.Services
             return await Task.FromResult(response);
         }
 
-        private void ProcessUpdate(UpdateToolRequest request, Consumables consumablesEntity)
+        private void ProcessUpdate(UpdateToolRequest request, Domain.Entities.Consumables consumablesEntity)
         {
 
             if (!string.IsNullOrWhiteSpace(request.ToolDescription) && request.ToolDescription != "string")
@@ -129,7 +132,7 @@ namespace Estoque.Application.Services
             consumablesEntity.LastUpdate = DateTime.UtcNow;
         }
 
-        private static BasicToolResponse FromEntityTOBasicResponse(Consumables consumablesEntity)
+        private static BasicToolResponse FromEntityTOBasicResponse(Domain.Entities.Consumables consumablesEntity)
         {
 
             BasicToolResponse basicTool = new()
@@ -145,12 +148,12 @@ namespace Estoque.Application.Services
             return basicTool;
         }
 
-        private void InactivateProduct(Consumables consumablesEntity)
+        private void InactivateProduct(Domain.Entities.Consumables consumablesEntity)
         {
             consumablesEntity.IsActive = false;
             consumablesEntity.LastUpdate = DateTime.UtcNow;
         }
-        private void ActivateProduct(Consumables consumablesEntity)
+        private void ActivateProduct(Domain.Entities.Consumables consumablesEntity)
         {
             consumablesEntity.IsActive = true;
             consumablesEntity.LastUpdate = DateTime.UtcNow;
@@ -161,7 +164,7 @@ namespace Estoque.Application.Services
         {
             var consumablesEntity = await _consumablesRepository.GetAsync();
 
-            foreach (Consumables consumables in consumablesEntity)
+            foreach (Domain.Entities.Consumables consumables in consumablesEntity)
             {
                 FromEntityTOBasicResponse(consumables);
                 if (!consumables.IsActive)
@@ -171,6 +174,15 @@ namespace Estoque.Application.Services
                     Console.WriteLine(consumables.Id);
                 }
             }
+        }
+
+        public async Task<IEnumerable<T>> ReadCSV<T>(Stream file)
+        {
+            var reader = new StreamReader(file);
+            var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
+
+            var records = csv.GetRecords<T>();
+            return records;
         }
     }
 }

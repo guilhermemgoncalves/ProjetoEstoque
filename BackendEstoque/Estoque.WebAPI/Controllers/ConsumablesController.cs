@@ -1,5 +1,6 @@
 ﻿using Estoque.Application.Interfaces;
 using Estoque.Application.Messages;
+
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
@@ -58,6 +59,14 @@ namespace Estoque.WebAPI.Controllers
         {
             await _consumablesService.ActivateAll();
             return Results.Ok();
+        }
+
+        [HttpPost("loadByCsv")]
+        public async Task<IActionResult> GetEmployeeCSV([FromForm] IFormFileCollection file)
+        {
+            var response = await _consumablesService.ReadCSV<ConsumablesCSV>(file[0].OpenReadStream());
+
+            return Ok(response);
         }
 
 

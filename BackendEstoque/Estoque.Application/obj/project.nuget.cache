@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "1nwZSk48dZZ38WXlIfc5O0A01/7dv+iH0YrpB6ifEVWXki9tA4GP5LymdVKVQGJZa2NKFyFkLwYWGpxWwVpiXg==",
+  "dgSpecHash": "KlqW83SIGMS08uUxvzSzCKCqRqu+UrW83ZHy5bvonMDccrJUKD6jlGxjUoOYu+tdJFJLJBSwLZuLSwADXlR3HQ==",
   "success": true,
   "projectFilePath": "C:\\Projects\\ProjetoEstoque\\BackendEstoque\\Estoque.Application\\Estoque.Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\225587\\.nuget\\packages\\csvhelper\\30.0.1\\csvhelper.30.0.1.nupkg.sha512",
     "C:\\Users\\225587\\.nuget\\packages\\mongodb.bson\\2.18.0\\mongodb.bson.2.18.0.nupkg.sha512",
     "C:\\Users\\225587\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
   ],
