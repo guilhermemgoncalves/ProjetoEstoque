@@ -21,16 +21,16 @@ namespace Estoque.WebAPI.Controllers
         }
 
         [HttpGet("GetAll")]
-        public async Task<GetToolsResponse> GetAllTools([FromQuery] string consumablesStatus)       
+        public async Task<ActionResult<GetToolsResponse>> GetAllTools([FromQuery] string consumablesStatus)       
         {
-            return await _consumablesService.GetTools(consumablesStatus);
+            return Ok(await _consumablesService.GetTools(consumablesStatus));
         }
 
 
         [HttpGet("GetById")]
-        public async Task<GetToolByIDResponse> GetToolById([FromQuery] Guid id)
+        public async Task<ActionResult<GetToolByIDResponse>> GetToolById([FromQuery] Guid id)
         {
-            return await _consumablesService.GetToolById(id);
+            return Ok(await _consumablesService.GetToolById(id));
         }
       
 
@@ -51,7 +51,7 @@ namespace Estoque.WebAPI.Controllers
         public async Task<ActionResult> DeleteTool([FromBody] Guid guid)
         {
             var response = await _consumablesService.DeleteTool(guid);
-            return Ok(response);
+            return NoContent();
         }
 
         [HttpGet("ActivateAll")]
@@ -62,14 +62,12 @@ namespace Estoque.WebAPI.Controllers
         }
 
         [HttpPost("loadByCsv")]
-        public async Task<IActionResult> GetEmployeeCSV([FromForm] IFormFileCollection file)
+        public async Task<ActionResult<string>> GetEmployeeCSV([FromForm] IFormFileCollection file)
         {
             var response = await _consumablesService.ReadCSV<ConsumablesCSV>(file[0].OpenReadStream());
 
-            return Ok(response);
+            return response;
         }
-
-
 
     }
 }

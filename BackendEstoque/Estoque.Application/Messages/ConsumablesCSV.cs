@@ -15,6 +15,7 @@ namespace Estoque.Application.Messages
         public string Model { get; set; }
         public string Location { get; set; }
         public decimal Price { get; set; }
+        public int Total { get; set; }
 
     }
 }

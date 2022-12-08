@@ -1,5 +1,6 @@
 ﻿
 using CsvHelper;
+using Estoque.Application.Converters;
 using Estoque.Application.Interfaces;
 using Estoque.Application.Messages;
 using Estoque.Domain.Entities;
@@ -176,13 +177,24 @@ namespace Estoque.Application.Services
             }
         }
 
-        public async Task<IEnumerable<T>> ReadCSV<T>(Stream file)
+        public async Task<string> ReadCSV<T>(Stream file)
         {
             var reader = new StreamReader(file);
             var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
+            var records = csv.GetRecords<ConsumablesCSV>();
+            ConsumablesConverter consumablesConverter = new();
 
-            var records = csv.GetRecords<T>();
-            return records;
+            int i = 0;
+
+            foreach (var record in records)
+            {
+                var consumablesEntity = consumablesConverter.ConvertToConsumables(record);
+                await _consumablesRepository.CreateAsync(consumablesEntity);
+                i++;
+            }
+            return $"Foram adicionados {i} registros com sucesso!";
         }
+
+
     }
 }

@@ -10,5 +10,5 @@ public interface IConsumablesService
     Task<GetToolByIDResponse> GetToolById(Guid Id);
     Task<GetToolsResponse> GetTools(string toolStatus);
     Task<UpdateToolResponse> UpdateTool(UpdateToolRequest request);
-    Task<IEnumerable<T>> ReadCSV<T>(Stream file);
+    Task<string> ReadCSV<T>(Stream file);
 }
