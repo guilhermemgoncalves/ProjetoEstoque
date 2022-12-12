@@ -24,7 +24,7 @@ namespace Estoque.Application.Services
 
         public async Task<CreateToolResponse> CreateTool(CreateToolRequest request)
         {
-            var consumablesEntity = new Domain.Entities.Consumables()
+            var consumablesEntity = new Consumables()
             {
                 Id = Guid.NewGuid(),
                 Category = request.ToolCategory,
@@ -50,12 +50,15 @@ namespace Estoque.Application.Services
         public async Task<GetToolByIDResponse> GetToolById(Guid Id)
         {
             var consumablesEntity = await _consumablesRepository.GetByIdAsync(Id);
+            var response = new GetToolByIDResponse();
 
-            GetToolByIDResponse response = new()
+            if(consumablesEntity == null)
             {
-                BasicToolResponse = FromEntityTOBasicResponse(consumablesEntity)
-            };
+               return await Task.FromResult(response);
+            }
 
+            response.BasicToolResponse = FromEntityTOBasicResponse(consumablesEntity);
+           
             return await Task.FromResult(response);
         }
 
@@ -65,7 +68,7 @@ namespace Estoque.Application.Services
             var consumablesEntity = await _consumablesRepository.GetAsync();
             GetToolsResponse response = new();
 
-            foreach (Domain.Entities.Consumables consumables in consumablesEntity)
+            foreach (Consumables consumables in consumablesEntity)
             {
                 BasicToolResponse basicToolResponse = FromEntityTOBasicResponse(consumables);
 
@@ -115,7 +118,7 @@ namespace Estoque.Application.Services
             return await Task.FromResult(response);
         }
 
-        private void ProcessUpdate(UpdateToolRequest request, Domain.Entities.Consumables consumablesEntity)
+        private void ProcessUpdate(UpdateToolRequest request, Consumables consumablesEntity)
         {
 
             if (!string.IsNullOrWhiteSpace(request.ToolDescription) && request.ToolDescription != "string")
@@ -133,7 +136,7 @@ namespace Estoque.Application.Services
             consumablesEntity.LastUpdate = DateTime.UtcNow;
         }
 
-        private static BasicToolResponse FromEntityTOBasicResponse(Domain.Entities.Consumables consumablesEntity)
+        private static BasicToolResponse FromEntityTOBasicResponse(Consumables consumablesEntity)
         {
 
             BasicToolResponse basicTool = new()
@@ -149,12 +152,12 @@ namespace Estoque.Application.Services
             return basicTool;
         }
 
-        private void InactivateProduct(Domain.Entities.Consumables consumablesEntity)
+        private void InactivateProduct(Consumables consumablesEntity)
         {
             consumablesEntity.IsActive = false;
             consumablesEntity.LastUpdate = DateTime.UtcNow;
         }
-        private void ActivateProduct(Domain.Entities.Consumables consumablesEntity)
+        private void ActivateProduct(Consumables consumablesEntity)
         {
             consumablesEntity.IsActive = true;
             consumablesEntity.LastUpdate = DateTime.UtcNow;
@@ -165,7 +168,7 @@ namespace Estoque.Application.Services
         {
             var consumablesEntity = await _consumablesRepository.GetAsync();
 
-            foreach (Domain.Entities.Consumables consumables in consumablesEntity)
+            foreach (Consumables consumables in consumablesEntity)
             {
                 FromEntityTOBasicResponse(consumables);
                 if (!consumables.IsActive)

@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "KlqW83SIGMS08uUxvzSzCKCqRqu+UrW83ZHy5bvonMDccrJUKD6jlGxjUoOYu+tdJFJLJBSwLZuLSwADXlR3HQ==",
+  "dgSpecHash": "R02l236h/7waZwbAdXYEXenxaSS/qrejh4cCZNjOAb5q1mhvITgpWwno5l1ikZbmMvkKWmTkgjpiVvvmTKwh8A==",
   "success": true,
-  "projectFilePath": "C:\\Projects\\ProjetoEstoque\\BackendEstoque\\Estoque.Application\\Estoque.Application.csproj",
+  "projectFilePath": "C:\\projects\\ProjetoEstoque\\BackendEstoque\\Estoque.Application\\Estoque.Application.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\225587\\.nuget\\packages\\csvhelper\\30.0.1\\csvhelper.30.0.1.nupkg.sha512",
-    "C:\\Users\\225587\\.nuget\\packages\\mongodb.bson\\2.18.0\\mongodb.bson.2.18.0.nupkg.sha512",
-    "C:\\Users\\225587\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
+    "C:\\Users\\guilh\\.nuget\\packages\\csvhelper\\30.0.1\\csvhelper.30.0.1.nupkg.sha512",
+    "C:\\Users\\guilh\\.nuget\\packages\\mongodb.bson\\2.18.0\\mongodb.bson.2.18.0.nupkg.sha512",
+    "C:\\Users\\guilh\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }

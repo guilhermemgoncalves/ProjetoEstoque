@@ -136,19 +136,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\225587\\.nuget\\packages\\": {}
+    "C:\\Users\\guilh\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projects\\ProjetoEstoque\\BackendEstoque\\Estoque.Application\\Estoque.Application.csproj",
+      "projectUniqueName": "C:\\projects\\ProjetoEstoque\\BackendEstoque\\Estoque.Application\\Estoque.Application.csproj",
       "projectName": "Estoque.Application",
-      "projectPath": "C:\\Projects\\ProjetoEstoque\\BackendEstoque\\Estoque.Application\\Estoque.Application.csproj",
-      "packagesPath": "C:\\Users\\225587\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\ProjetoEstoque\\BackendEstoque\\Estoque.Application\\obj\\",
+      "projectPath": "C:\\projects\\ProjetoEstoque\\BackendEstoque\\Estoque.Application\\Estoque.Application.csproj",
+      "packagesPath": "C:\\Users\\guilh\\.nuget\\packages\\",
+      "outputPath": "C:\\projects\\ProjetoEstoque\\BackendEstoque\\Estoque.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\225587\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\guilh\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -162,8 +162,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Projects\\ProjetoEstoque\\BackendEstoque\\Estoque.Domain\\Estoque.Domain.csproj": {
-              "projectPath": "C:\\Projects\\ProjetoEstoque\\BackendEstoque\\Estoque.Domain\\Estoque.Domain.csproj"
+            "C:\\projects\\ProjetoEstoque\\BackendEstoque\\Estoque.Domain\\Estoque.Domain.csproj": {
+              "projectPath": "C:\\projects\\ProjetoEstoque\\BackendEstoque\\Estoque.Domain\\Estoque.Domain.csproj"
             }
           }
         }
