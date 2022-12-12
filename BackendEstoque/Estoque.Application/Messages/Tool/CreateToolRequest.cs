@@ -9,9 +9,9 @@ namespace Estoque.Application.Messages
     public class CreateToolRequest
     {        
         public string ToolName { get; set; } = null!;
-        public string? ToolDescription { get; set; } 
+        public string? ToolDescription { get; set; } = null!;
         public string ToolCategory { get; set; } = null!;
-        public double ToolPrice { get; set; }
+        public decimal ToolPrice { get; set; }
         public bool IsActive { get; set; }
     }
 }

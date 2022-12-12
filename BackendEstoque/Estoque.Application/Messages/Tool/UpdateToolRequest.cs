@@ -12,6 +12,6 @@ namespace Estoque.Application.Messages
         public string? ToolName { get; set; } 
         public string? ToolDescription { get; set; }
         public string? ToolCategory { get; set; } 
-        public double ToolPrice { get; set; }        
+        public decimal ToolPrice { get; set; }        
     }
 }

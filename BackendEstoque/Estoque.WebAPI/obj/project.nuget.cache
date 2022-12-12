@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "Q3/fX7lRrnnhqRF+QJNkjnnsOzsiaP4s5A1EOgzSWpIb7/hTHGWv2x/CKx/3QPCJpizWPyZQSSFVgRTdcyR92Q==",
+  "dgSpecHash": "Ulkm520K+84fTMIA4bSnlkt30SGHob20nYPfO1YG5BpXLMlWK6DnImy4EYFnc/UUSyCd3yVrMXd8L/4exgkfgQ==",
   "success": true,
   "projectFilePath": "C:\\Projects\\ProjetoEstoque\\BackendEstoque\\Estoque.WebAPI\\Estoque.WebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\225587\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\225587\\.nuget\\packages\\azure.storage.blobs\\12.13.1\\azure.storage.blobs.12.13.1.nupkg.sha512",
     "C:\\Users\\225587\\.nuget\\packages\\azure.storage.common\\12.12.0\\azure.storage.common.12.12.0.nupkg.sha512",
+    "C:\\Users\\225587\\.nuget\\packages\\csvhelper\\30.0.1\\csvhelper.30.0.1.nupkg.sha512",
     "C:\\Users\\225587\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
     "C:\\Users\\225587\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.4\\microsoft.aspnet.webapi.client.5.2.4.nupkg.sha512",
     "C:\\Users\\225587\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.1.0\\microsoft.aspnetcore.authentication.abstractions.2.1.0.nupkg.sha512",
