@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "d0tpp4vpBr/bIr8CpXu5GaRYjD+IFnkPQUDSfPKqq+0dWkR3HLN6SW7jycPxHBzb/K1rAt0FugpSQ0cHR9erYw==",
+  "dgSpecHash": "ytp5GU8ZbYhd7nFOUdWcZGJy+y4Xvk6vbXH2fG0As3z3OD5QcZz7tSjqh2mqbZ4g+yIIHX7In5Z6VIi1xjwSOw==",
   "success": true,
   "projectFilePath": "C:\\projects\\ProjetoEstoque\\BackendEstoque\\Estoque.WebAPI\\Estoque.WebAPI.csproj",
   "expectedPackageFiles": [

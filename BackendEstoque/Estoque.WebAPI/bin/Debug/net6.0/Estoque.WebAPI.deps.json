@@ -1834,6 +1834,7 @@
       },
       "Estoque.Application/1.0.0": {
         "dependencies": {
+          "Azure.Storage.Blobs": "12.13.1",
           "CsvHelper": "30.0.1",
           "Estoque.Domain": "1.0.0"
         },

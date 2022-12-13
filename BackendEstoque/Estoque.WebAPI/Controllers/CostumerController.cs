@@ -1,4 +1,5 @@
 ﻿using Estoque.Application.Interfaces;
+using Estoque.Application.Messages.Costumers;
 using Estoque.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
@@ -55,5 +56,21 @@ namespace Estoque.WebAPI.Controllers
             var response = await _costumerService.CreateCostumer(costumer);
             return Created("Criado", response);
         }
+
+        /// <summary>
+        /// Cria um usuário na base de dados
+        /// </summary>
+        ///
+        /// <returns> </returns>
+        /// <response code ="200"> Cria Upload de Foto para usuario </response> 
+        /// 
+        [HttpPost("uploadImage")]
+        public async Task<ActionResult<string>> Post([FromBody] UploadImageCommand body)
+        {
+            var response = await _costumerService.UploadBase64Image(body.Image, body.Container);
+            return Created("Criado", response);
+        }
+
+
     }
 }
