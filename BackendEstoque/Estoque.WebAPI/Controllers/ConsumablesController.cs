@@ -67,7 +67,6 @@ namespace Estoque.WebAPI.Controllers
                 var message = "O item não existe no banco de dados";
                 return Ok(message); 
             }
-
             return Ok(result);
         }
       
@@ -90,29 +89,67 @@ namespace Estoque.WebAPI.Controllers
             }
 
             var response = await _consumablesService.CreateTool(request);
-            return Created("teste",response);
-        }
 
-        [HttpPost("Update")]
-        public async Task<UpdateToolResponse> UpdateTools([FromBody] UpdateToolRequest request)
-        {
-            return await _consumablesService.UpdateTool(request);
+            return Created("Produto Criado:", response);
         }
+        /// <summary>
+        /// Atualiza um item no estoque
+        /// </summary>
+        ///
+        /// <returns> </returns>
+        /// <response code ="200"> Retorna a data e hora que item foi Atualizado</response>  
+        /// <response code ="400"> Informação obrigatóriao não fornecida</response>
+        [HttpPost("Update")]
+        public async Task<ActionResult<UpdateToolResponse>> UpdateTools([FromBody] UpdateToolRequest request)
+        {
+            var responseMessage = ValidateFields(request);
+             if(responseMessage != "ValidFields")
+            {
+                return BadRequest(error: responseMessage);
+            }
+
+            var response = await _consumablesService.UpdateTool(request);
+
+            if (response.LastUpdate == DateTime.MinValue)
+            {
+                var message = "O item não existe no banco de dados";
+                return Ok(message);
+            }
+            return Ok(response);
+        }
+        /// <summary>
+        /// Desativa o Item na Base de dados
+        /// </summary>
+        ///
+        /// <returns> </returns>
+        /// <response code ="204"> O item foi Atualizado</response>         
 
         [HttpDelete("Delete")]
         public async Task<ActionResult> DeleteTool([FromBody] Guid guid)
         {
-            var response = await _consumablesService.DeleteTool(guid);
+            
+            await _consumablesService.DeleteTool(guid);
             return NoContent();
         }
-
+        /// <summary>
+        /// Atualiza todos os itens do estoque para ativo
+        /// </summary>
+        ///
+        /// <returns> </returns>
+        /// <response code ="200"> Retorna a data e hora que item foi Atualizado</response>  
+    
         [HttpGet("ActivateAll")]
-        public async Task<IResult> GetActivateAll()
+        public async Task<ActionResult<string>> GetActivateAll()
         {
             await _consumablesService.ActivateAll();
-            return Results.Ok();
+            return Ok("Todos os itens foram atualizados");
         }
-
+        /// <summary>
+        /// Sobe a base de dados por CSV
+        /// </summary>
+        ///
+        /// <returns> </returns>
+        /// <response code ="200"> Retorna a Base de dados</response>  
         [HttpPost("loadByCsv")]
         public async Task<ActionResult<string>> GetEmployeeCSV([FromForm] IFormFileCollection file)
         {
@@ -123,6 +160,22 @@ namespace Estoque.WebAPI.Controllers
 
         private string ValidateFields(CreateToolRequest request)
         {
+            if (string.IsNullOrWhiteSpace(request.ToolDescription) || request.ToolDescription == "string")
+            {
+                return "Erro: O campo toolDescription é obrigatório";
+            }
+            if (string.IsNullOrWhiteSpace(request.ToolCategory) || request.ToolCategory == "string")
+            {
+                return "Erro: O campo ToolCategory é obrigatório";
+            }
+            return "ValidFields";
+        }
+        private string ValidateFields(UpdateToolRequest request)
+        {
+            if (string.IsNullOrWhiteSpace(request.Id.ToString()))
+            {
+                return "Erro: O campo Id é obrigatório";
+            }
             if (string.IsNullOrWhiteSpace(request.ToolDescription) || request.ToolDescription == "string")
             {
                 return "Erro: O campo toolDescription é obrigatório";

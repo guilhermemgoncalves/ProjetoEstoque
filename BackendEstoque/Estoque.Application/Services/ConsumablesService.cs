@@ -94,6 +94,11 @@ namespace Estoque.Application.Services
         {
             var consumables = await _consumablesRepository.GetByIdAsync(request.Id);
 
+            if(consumables == null)
+            {
+                return new UpdateToolResponse();
+            }
+
             ProcessUpdate(request, consumables);
 
             UpdateToolResponse response = new()
