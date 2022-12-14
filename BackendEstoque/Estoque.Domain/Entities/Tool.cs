@@ -18,7 +18,7 @@ namespace Estoque.Domain.Entities
         public string? Description { get; set; } 
         public string Category { get; set; } = null!;
         public List<string> Tags { get; set; } = new();
-        public double Price { get; set; }
+        public decimal Price { get; set; }
         public bool IsActive { get; set; } 
         public DateTime DateRegistry { get; set; }
         public DateTime LastUpdate { get; set; }

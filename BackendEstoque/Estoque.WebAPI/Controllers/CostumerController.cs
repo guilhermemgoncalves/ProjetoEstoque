@@ -1,4 +1,5 @@
 ﻿using Estoque.Application.Interfaces;
+using Estoque.Application.Messages.Costumers;
 using Estoque.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,47 +7,77 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Estoque.WebAPI.Controllers
 {
+    /// <summary>
+    /// Controller de Usuarios do sistema
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class CostumerController : ControllerBase
     {
 
         private readonly ICostumerService _costumerService;
+        /// <summary>
+        /// Construtor do Costumer Controller
+        /// </summary>
+        /// <param name="costumerService"></param>
         public CostumerController(ICostumerService costumerService)
         {
             _costumerService = costumerService;
         }
+
         // GET: api/<ValuesController>
+        /// <summary>
+        /// Obtem todos os usuários que podem retirar produtos
+        /// </summary>
+        ///
+        /// <returns> </returns>
+        /// <response code ="200"> Retorna a Base de dados</response>  
         [HttpGet]
-        public async Task<IResult> Get()
+        public async Task<ActionResult<Costumer>> Get()
         {
-            return  Results.Ok( await _costumerService.GetAll());
+            return Ok(await _costumerService.GetAll());
         }
-
-        // GET api/<ValuesController>/5
+        
+        /// <summary>
+        /// Retorna o  usuários pelo seu numero de prontuário
+        /// </summary>
+        ///
+        /// <returns> </returns>
+        /// <response code ="200"> Retorna usuário </response>  
         [HttpGet("{id}")]
-        public async Task<IResult> Get(string id)
+        public async Task<ActionResult<Costumer>> Get(string prontuario)
         {
-            return Results.Ok(await _costumerService.GetById(id));
+            return Ok(await _costumerService.GetById(prontuario));
         }
 
-        // POST api/<ValuesController>
+
+        /// <summary>
+        /// Cria um usuário na base de dados
+        /// </summary>
+        ///
+        /// <returns> </returns>
+        /// <response code ="200"> Cria um usuário </response> 
         [HttpPost]
-        public async Task<IResult> Post([FromBody] Costumer costumer)
+        public async Task<ActionResult<Costumer>> Post([FromBody] Costumer costumer)
         {
-            return Results.Ok( await _costumerService.CreateCostumer(costumer));
+            var response = await _costumerService.CreateCostumer(costumer);
+            return Created("Criado", response);
         }
 
-        //// PUT api/<ValuesController>/5
-        //[HttpPut("{id}")]
-        //public void Put(int id, [FromBody] string value)
-        //{
-        //}
+        /// <summary>
+        /// Cria um usuário na base de dados
+        /// </summary>
+        ///
+        /// <returns> </returns>
+        /// <response code ="200"> Cria Upload de Foto para usuario </response> 
+        /// 
+        [HttpPost("uploadImage")]
+        public async Task<ActionResult<string>> UploadImage([FromBody] UploadImageCommand body)
+        {
+            var response = await _costumerService.UploadBase64Image(body.Image, body.Container, body.Prontuario);
+            return Created("Criado", response);
+        }
 
-        //// DELETE api/<ValuesController>/5
-        //[HttpDelete("{id}")]
-        //public void Delete(int id)
-        //{
-        //}
+
     }
 }

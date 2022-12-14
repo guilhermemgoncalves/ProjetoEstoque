@@ -469,3 +469,6 @@ C:\Projects\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\obj\Debug\net6.0\Estoqu
 C:\Projects\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\obj\Debug\net6.0\ref\Estoque.WebAPI.dll
 C:\Projects\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\obj\Debug\net6.0\Estoque.WebAPI.pdb
 C:\Projects\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\obj\Debug\net6.0\Estoque.WebAPI.genruntimeconfig.cache
+C:\Projects\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\bin\Debug\net6.0\CsvHelper.dll
+C:\projects\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\bin\Debug\net6.0\Estoque.WebAPI.xml
+C:\projects\ProjetoEstoque\BackendEstoque\Estoque.WebAPI\obj\Debug\net6.0\Estoque.WebAPI.xml

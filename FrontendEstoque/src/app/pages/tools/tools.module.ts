@@ -3,7 +3,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ToolsComponent } from './tools.component';
 import { HomeRoutingModule } from '../home/home-routing.module';
-
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
 
 
 @NgModule({
@@ -13,8 +15,10 @@ import { HomeRoutingModule } from '../home/home-routing.module';
   imports: [
     CommonModule,
     ToolsRoutingModule,
-    HomeRoutingModule
-  ],
+    HomeRoutingModule,
+    ButtonsModule.forRoot(),
+    AccordionModule.forRoot(),
+    ],
   exports:[
     ToolsComponent
   ]

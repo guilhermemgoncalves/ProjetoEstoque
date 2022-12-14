@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Estoque.Application.Messages
 {
-    public class UpdateToolResponse
+    public class GetProductByIDResponse
     {
-        public DateTime LastUpdate { get; set; }
+        public BasicProduct ProductResponse { get; set; } = new();
     }
 }

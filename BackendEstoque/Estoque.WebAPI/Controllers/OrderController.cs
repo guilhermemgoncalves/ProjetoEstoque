@@ -6,17 +6,30 @@ using Microsoft.AspNetCore.Mvc;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Estoque.WebAPI.Controllers
-{
+{   
+    /// <summary>
+    /// Api de Pedidos 
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class OrderController : ControllerBase
     {
         private readonly IOrderService _orderService;
+        /// <summary>
+        /// Construtor OrderController
+        /// </summary>
+        /// <param name="orderService"></param>
         public OrderController(IOrderService orderService)
         {
             _orderService = orderService;
         }
-        // GET: api/<OrderController>
+
+        /// <summary>
+        /// Obtem todos os pedidos feitos
+        /// </summary>
+        ///
+        /// <returns> </returns>
+        /// <response code ="200"> Retorna pedidos feitos</response>  
         [HttpGet]
         public async Task<IResult> GetOrders()
         {
@@ -24,29 +37,35 @@ namespace Estoque.WebAPI.Controllers
             return Results.Ok(response);
         }
 
-        // GET api/<OrderController>/5
+        /// <summary>
+        /// Retorna um pedido pelo id
+        /// </summary>
+        ///
+        /// <returns> </returns>
+        /// <response code ="200"> Retorna um pedido</response>  
         [HttpGet("{id}")]
-        public async Task<IResult>Get(Guid id)
+        public async Task<ActionResult<Orders>> Get(Guid id)
         {
             var response = await _orderService.GetById(id);
 
-            return Results.Ok(response);
+            return Ok(response);
         }
 
-        // POST api/<OrderController>
+
+        /// <summary>
+        /// Cria um pedido na base de dados
+        /// </summary>
+        ///
+        /// <returns> </returns>
+        /// <response code ="200"> Cria um pedido </response> 
         [HttpPost("CreateOrder")]
-        public async Task<IResult> Post([FromBody] CreateOrderRequest request)
+        public async Task<ActionResult<Orders>> Post([FromBody] CreateOrderRequest request)
         {
             var response = await _orderService.CreateOrder(request);
 
-            return Results.Ok(response) ;
+            return Created("Criado", response);
         }
 
-        //// PUT api/<OrderController>/5
-        //[HttpPut("{id}")]
-        //public void Put(int id, [FromBody] string value)
-        //{
-
-        //}
+       
     }
 }

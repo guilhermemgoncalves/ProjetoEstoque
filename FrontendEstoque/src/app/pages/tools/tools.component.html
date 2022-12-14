@@ -1,1 +1,21 @@
-<p>tools works!</p>
+<main>
+  <div class="container">
+
+    <div class="search-tools">
+      <input type="text" class="form-control" placeholder="Search Tools Here">
+
+
+    </div>
+    <accordion [isAnimated]="true">
+      <accordion-group *ngFor="let teste of arrayTest " heading="{{teste}}">
+        {{teste}}
+      </accordion-group>
+    </accordion>
+
+    <div class="button-ctn">
+      <button type="button" class="btn btn-primary">
+        +
+       </button>
+    </div>
+  </div>
+</main>
