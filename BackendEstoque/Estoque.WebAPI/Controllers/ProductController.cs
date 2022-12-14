@@ -67,7 +67,7 @@ namespace Estoque.WebAPI.Controllers
         {
             var result = await _consumablesService.GetToolById(id);
 
-            if(string.IsNullOrEmpty(result.BasicToolResponse.Description))
+            if(string.IsNullOrEmpty(result.ProductResponse.Description))
             {
                 var message = "O item não existe no banco de dados";
                 return Ok(message); 
@@ -165,11 +165,11 @@ namespace Estoque.WebAPI.Controllers
 
         private string ValidateFields(CreateProductRequest request)
         {
-            if (string.IsNullOrWhiteSpace(request.ToolDescription) || request.ToolDescription == "string")
+            if (string.IsNullOrWhiteSpace(request.Description) || request.Description == "string")
             {
                 return "Erro: O campo toolDescription é obrigatório";
             }
-            if (string.IsNullOrWhiteSpace(request.ToolCategory) || request.ToolCategory == "string")
+            if (string.IsNullOrWhiteSpace(request.Category) || request.Category == "string")
             {
                 return "Erro: O campo ToolCategory é obrigatório";
             }

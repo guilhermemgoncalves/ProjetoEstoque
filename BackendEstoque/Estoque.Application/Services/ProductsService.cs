@@ -16,27 +16,19 @@ namespace Estoque.Application.Services
 {
     public class ProductsService :  IProductsService
     {
-        private readonly IProductRepository _consumablesRepository;
+        private readonly IProductRepository _productsRepository;
+        private readonly ProductHelpers _productHelpers = new();
         public ProductsService(IProductRepository consumablesRepository)
         {
-            _consumablesRepository = consumablesRepository;
+            _productsRepository = consumablesRepository;
         }
 
         public async Task<CreateProductResponse> CreateTool(CreateProductRequest request)
         {
-            var productEntity = new Product()
-            {
-                Id = Guid.NewGuid(),
-                Category = request.ToolCategory,
-                DateRegistry = DateTime.UtcNow,
-                Description = request.ToolDescription,
-                IsActive = true,
-                Price = request.ToolPrice,
-                LastUpdate = DateTime.UtcNow,
-            };
+            var productEntity = _productHelpers.ConvertToProduct(request);
 
-            await _consumablesRepository.CreateAsync(productEntity);
-
+            await _productsRepository.CreateAsync(productEntity);
+            //Adicionar a Helpers
             CreateProductResponse response = new()
             {
                 Id = productEntity.Id,
@@ -49,7 +41,7 @@ namespace Estoque.Application.Services
 
         public async Task<GetProductByIDResponse> GetToolById(Guid Id)
         {
-            var productEntity = await _consumablesRepository.GetByIdAsync(Id);
+            var productEntity = await _productsRepository.GetByIdAsync(Id);
             var response = new GetProductByIDResponse();
 
             if(productEntity == null)
@@ -57,7 +49,7 @@ namespace Estoque.Application.Services
                return await Task.FromResult(response);
             }
 
-            response.BasicToolResponse = FromEntityTOBasicResponse(productEntity);
+            response.ProductResponse = _productHelpers.FromEntityTOBasicResponse(productEntity);
            
             return await Task.FromResult(response);
         }
@@ -65,25 +57,25 @@ namespace Estoque.Application.Services
         public async Task<GetProductResponse> GetTools(string toolStatus)
         {
 
-            var consumablesEntity = await _consumablesRepository.GetAsync();
+            var productsEntity = await _productsRepository.GetAsync();
             GetProductResponse response = new();
 
-            foreach (Product consumables in consumablesEntity)
+            foreach (Product product in productsEntity)
             {
-                BasicProduct basicToolResponse = FromEntityTOBasicResponse(consumables);
+                BasicProduct ProductResponse = _productHelpers.FromEntityTOBasicResponse(product);
 
                 if (toolStatus == "true")
                 {
-                    if (basicToolResponse.IsActive == true)
+                    if (ProductResponse.IsActive == true)
                     {
-                        response.BasicToolResponse.Add(basicToolResponse);
+                        response.BasicToolResponse.Add(ProductResponse);
                     }
                 }
                 if (toolStatus == "false")
                 {
-                    if (basicToolResponse.IsActive == false)
+                    if (ProductResponse.IsActive == false)
                     {
-                        response.BasicToolResponse.Add(basicToolResponse);
+                        response.BasicToolResponse.Add(ProductResponse);
                     }
                 }
             }
@@ -92,18 +84,16 @@ namespace Estoque.Application.Services
 
         public async Task<UpdateProductResponse> UpdateTool(UpdateProductRequest request)
         {
-            var consumables = await _consumablesRepository.GetByIdAsync(request.Id);
+            var products = await _productsRepository.GetByIdAsync(request.Id);
 
-            if(consumables == null)
+            if(products == null)
             {
                 return new UpdateProductResponse();
             }
-
-            ProcessUpdate(request, consumables);
-
+            //Adicionar a Helpers
             UpdateProductResponse response = new()
             {
-                LastUpdate = await _consumablesRepository.UpdateByIdAsync(consumables, consumables.Id)
+                LastUpdate = await _productsRepository.UpdateByIdAsync(products, products.Id)
             };
 
             return await Task.FromResult(response);
@@ -111,76 +101,30 @@ namespace Estoque.Application.Services
 
         public async Task<UpdateProductResponse> DeleteTool(Guid id)
         {
-            var productEntity = await _consumablesRepository.GetByIdAsync(id);
+            var productEntity = await _productsRepository.GetByIdAsync(id);
 
-            InactivateProduct(productEntity);
-
+            _productHelpers.InactivateProduct(productEntity);
+            //Adicionar a Helpers
             UpdateProductResponse response = new()
             {
-                LastUpdate = await _consumablesRepository.UpdateByIdAsync(productEntity, productEntity.Id)
+                LastUpdate = await _productsRepository.UpdateByIdAsync(productEntity, productEntity.Id)
             };
 
             return await Task.FromResult(response);
         }
 
-        private void ProcessUpdate(UpdateProductRequest request, Product productEntity)
-        {
-
-            if (!string.IsNullOrWhiteSpace(request.ToolDescription) && request.ToolDescription != "string")
-            {
-                productEntity.Description = request.ToolDescription;
-            }
-            if (!string.IsNullOrWhiteSpace(request.ToolCategory) && request.ToolCategory != "string")
-            {
-                productEntity.Category = request.ToolCategory;
-            }
-            if (request.ToolPrice != 0)
-            {
-                productEntity.Price = request.ToolPrice;
-            }
-            productEntity.LastUpdate = DateTime.UtcNow;
-        }
-
-        private static BasicProduct FromEntityTOBasicResponse(Product consumablesEntity)
-        {
-
-            BasicProduct basicTool = new()
-            {
-                Id = consumablesEntity.Id,
-                Category = consumablesEntity.Category,
-                Description = consumablesEntity.Description,
-                IsActive = consumablesEntity.IsActive,
-                Price = consumablesEntity.Price,
-                LastUpdate = consumablesEntity.LastUpdate
-            };
-
-            return basicTool;
-        }
-
-        private void InactivateProduct(Product consumablesEntity)
-        {
-            consumablesEntity.IsActive = false;
-            consumablesEntity.LastUpdate = DateTime.UtcNow;
-        }
-        private void ActivateProduct(Product consumablesEntity)
-        {
-            consumablesEntity.IsActive = true;
-            consumablesEntity.LastUpdate = DateTime.UtcNow;
-        }
-
-
         public async Task ActivateAll()
         {
-            var consumablesEntity = await _consumablesRepository.GetAsync();
+            var produtcsEntity = await _productsRepository.GetAsync();
 
-            foreach (Product consumables in consumablesEntity)
+            foreach (Product product in produtcsEntity)
             {
-                FromEntityTOBasicResponse(consumables);
-                if (!consumables.IsActive)
+                _productHelpers.FromEntityTOBasicResponse(product);
+                if (!product.IsActive)
                 {
-                    ActivateProduct(consumables);
-                    await _consumablesRepository.UpdateByIdAsync(consumables, consumables.Id);
-                    Console.WriteLine(consumables.Id);
+                    _productHelpers.ActivateProduct(product);
+                    await _productsRepository.UpdateByIdAsync(product, product.Id);
+                    Console.WriteLine(product.Id);
                 }
             }
         }
@@ -189,15 +133,14 @@ namespace Estoque.Application.Services
         {
             var reader = new StreamReader(file);
             var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
-            var records = csv.GetRecords<ProductsCSV>();
-            ProductsConverter consumablesConverter = new();
+            var records = csv.GetRecords<ProductsCSV>();            
 
             int i = 0;
 
             foreach (var record in records)
             {
-                var consumablesEntity = consumablesConverter.ConvertToProduct(record);
-                await _consumablesRepository.CreateAsync(consumablesEntity);
+                var productsEntity = _productHelpers.ConvertToProduct(record);
+                await _productsRepository.CreateAsync(productsEntity);
                 i++;
             }
             return $"Foram adicionados {i} registros com sucesso!";

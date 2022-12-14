@@ -23,12 +23,11 @@ namespace Estoque.Application.Services
             var toolEntity = new Tool()
             {
                 Id = Guid.NewGuid(),
-                Category = request.ToolCategory,
+                Category = request.Category,
                 DateRegistry = DateTime.UtcNow,
-                Description = request.ToolDescription,
-                IsActive = true,
-                Name = request.ToolName,
-                Price = request.ToolPrice,
+                Description = request.Description,
+                IsActive = true,                
+                Price = request.Price,
                 LastUpdate = DateTime.UtcNow,                
             };
 
@@ -50,7 +49,7 @@ namespace Estoque.Application.Services
 
             GetProductByIDResponse response = new ()
             {
-                BasicToolResponse = FromEntityTOBasicResponse(toolEntity)
+                ProductResponse = FromEntityTOBasicResponse(toolEntity)
             };
 
             return await Task.FromResult(response);

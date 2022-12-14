@@ -8,6 +8,6 @@ namespace Estoque.Application.Messages
 {
     public class GetProductByIDResponse
     {
-        public BasicProduct BasicToolResponse { get; set; } = new();
+        public BasicProduct ProductResponse { get; set; } = new();
     }
 }

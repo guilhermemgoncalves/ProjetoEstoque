@@ -8,10 +8,14 @@ namespace Estoque.Application.Messages
 {
     public class CreateProductRequest
     {        
-        public string ToolName { get; set; } = null!;
-        public string? ToolDescription { get; set; } = null!;
-        public string ToolCategory { get; set; } = null!;
-        public decimal ToolPrice { get; set; }
-        public bool IsActive { get; set; }
+        public string Brand { get; set; } = null!;
+        public string Category { get; set; } = null!;
+        public string Description { get; set; } = null!;
+        public bool IsActive { get; set; }        
+        public string Type { get; set; } = null!;
+        public string Location { get; set; } = null!;        
+        public string Model { get; set; } = null!;
+        public decimal Price { get; set; }
+
     }
 }
