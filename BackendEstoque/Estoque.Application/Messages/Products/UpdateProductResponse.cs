@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Estoque.Application.Messages
 {
-    public class CreateToolResponse
+    public class UpdateProductResponse
     {
-        public Guid Id { get; set; }       
-        public bool IsActive { get; set; }
-        public DateTime DateRegistry { get; set; }
+        public DateTime LastUpdate { get; set; }
     }
 }
