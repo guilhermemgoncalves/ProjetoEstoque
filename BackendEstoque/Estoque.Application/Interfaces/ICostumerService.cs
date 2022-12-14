@@ -12,5 +12,5 @@ public interface ICostumerService
     Task<bool> CreateCostumer(Costumer costumer);
     Task<List<Costumer>> GetAll();
     Task<Costumer> GetById(string prontuario);
-    Task<string> UploadBase64Image(string base64Image, string container);
+    Task<string> UploadBase64Image(string base64Image, string container, string prontuario);
 }

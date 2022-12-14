@@ -7,15 +7,20 @@ using System.Net;
 
 namespace Estoque.WebAPI.Controllers
 {
-    
+    /// <summary>
+    /// Controller de usuários que farão a retirada dos produtos
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     
-    public class ConsumablesController : ControllerBase
+    public class ProductController : ControllerBase
     {
-        private readonly IConsumablesService _consumablesService;
-
-        public ConsumablesController(IConsumablesService consumablesService)
+        private readonly IProductsService _consumablesService;
+        /// <summary>
+        /// Construtor de consumableController
+        /// </summary>
+        /// <param name="consumablesService"></param>
+        public ProductController(IProductsService consumablesService)
         {
             _consumablesService = consumablesService;
         }
@@ -31,7 +36,7 @@ namespace Estoque.WebAPI.Controllers
         /// <response code ="204"> Não há Itens com o consumableStatus enviado</response>
         /// <response code ="400"> consumableStatus não aceito</response>
         [HttpGet("GetAll")]
-        public async Task<ActionResult<GetToolsResponse>> GetAllTools([FromQuery] string consumablesStatus)       
+        public async Task<ActionResult<GetProductResponse>> GetAllTools([FromQuery] string consumablesStatus)       
         {
             if(string.IsNullOrEmpty(consumablesStatus))
             {
@@ -58,7 +63,7 @@ namespace Estoque.WebAPI.Controllers
 
 
         [HttpGet("GetById")]
-        public async Task<ActionResult<GetToolByIDResponse>> GetToolById([FromQuery] Guid id)
+        public async Task<ActionResult<GetProductByIDResponse>> GetToolById([FromQuery] Guid id)
         {
             var result = await _consumablesService.GetToolById(id);
 
@@ -78,7 +83,7 @@ namespace Estoque.WebAPI.Controllers
         /// <response code ="200"> Retorna a data e hora que item foi criado</response>  
         /// <response code ="400"> Informação obrigatóriao não fornecida</response>
         [HttpPost("Create")]
-        public async Task<ActionResult> CreateTools([FromBody] CreateToolRequest request)
+        public async Task<ActionResult> CreateTools([FromBody] CreateProductRequest request)
         {
 
             var responseMessage = ValidateFields(request);
@@ -100,7 +105,7 @@ namespace Estoque.WebAPI.Controllers
         /// <response code ="200"> Retorna a data e hora que item foi Atualizado</response>  
         /// <response code ="400"> Informação obrigatóriao não fornecida</response>
         [HttpPost("Update")]
-        public async Task<ActionResult<UpdateToolResponse>> UpdateTools([FromBody] UpdateToolRequest request)
+        public async Task<ActionResult<UpdateProductResponse>> UpdateTools([FromBody] UpdateProductRequest request)
         {
             var responseMessage = ValidateFields(request);
              if(responseMessage != "ValidFields")
@@ -153,12 +158,12 @@ namespace Estoque.WebAPI.Controllers
         [HttpPost("loadByCsv")]
         public async Task<ActionResult<string>> GetEmployeeCSV([FromForm] IFormFileCollection file)
         {
-            var response = await _consumablesService.ReadCSV<ConsumablesCSV>(file[0].OpenReadStream());
+            var response = await _consumablesService.ReadCSV<ProductsCSV>(file[0].OpenReadStream());
 
             return response;
         }
 
-        private string ValidateFields(CreateToolRequest request)
+        private string ValidateFields(CreateProductRequest request)
         {
             if (string.IsNullOrWhiteSpace(request.ToolDescription) || request.ToolDescription == "string")
             {
@@ -170,7 +175,7 @@ namespace Estoque.WebAPI.Controllers
             }
             return "ValidFields";
         }
-        private string ValidateFields(UpdateToolRequest request)
+        private string ValidateFields(UpdateProductRequest request)
         {
             if (string.IsNullOrWhiteSpace(request.Id.ToString()))
             {

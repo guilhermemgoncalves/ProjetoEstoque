@@ -7,12 +7,19 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Estoque.WebAPI.Controllers
 {
+    /// <summary>
+    /// Controller de Usuarios do sistema
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class CostumerController : ControllerBase
     {
 
         private readonly ICostumerService _costumerService;
+        /// <summary>
+        /// Construtor do Costumer Controller
+        /// </summary>
+        /// <param name="costumerService"></param>
         public CostumerController(ICostumerService costumerService)
         {
             _costumerService = costumerService;
@@ -65,9 +72,9 @@ namespace Estoque.WebAPI.Controllers
         /// <response code ="200"> Cria Upload de Foto para usuario </response> 
         /// 
         [HttpPost("uploadImage")]
-        public async Task<ActionResult<string>> Post([FromBody] UploadImageCommand body)
+        public async Task<ActionResult<string>> UploadImage([FromBody] UploadImageCommand body)
         {
-            var response = await _costumerService.UploadBase64Image(body.Image, body.Container);
+            var response = await _costumerService.UploadBase64Image(body.Image, body.Container, body.Prontuario);
             return Created("Criado", response);
         }
 

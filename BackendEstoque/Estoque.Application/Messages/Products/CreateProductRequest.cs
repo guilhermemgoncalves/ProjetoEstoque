@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Estoque.Application.Messages
 {
-    public class CreateToolRequest
+    public class CreateProductRequest
     {        
         public string ToolName { get; set; } = null!;
         public string? ToolDescription { get; set; } = null!;

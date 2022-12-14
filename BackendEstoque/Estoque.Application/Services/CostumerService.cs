@@ -36,9 +36,10 @@ namespace Estoque.Application.Services
             return await _costumerRepository.GetByIdAsync(prontuario);
         }
 
-        public Task<string> UploadBase64Image(string base64Image, string container)
+        public Task<string> UploadBase64Image(string base64Image, string container, string prontuario)
         {
             var fileName = Guid.NewGuid().ToString()+".jpg";
+            Console.WriteLine("id: "+prontuario);
 
             var data = new Regex(@"^data:image\/[a-z]+;base64,").Replace(base64Image, "");
 

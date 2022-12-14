@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Estoque.Application.Messages
 {
-    public class UpdateToolRequest
+    public class UpdateProductRequest
     {   
         public Guid Id { get; set; }
         public string? ToolName { get; set; } 

@@ -15,7 +15,7 @@ builder.Services.Configure<EstoqueDbSettings>(
 builder.Services.AddSingleton<IToolRepository, ToolRepository>();
 builder.Services.AddSingleton<IOrderRepository, OrderRepository>();
 builder.Services.AddSingleton<ICostumerRepository, CostumerRepository>();
-builder.Services.AddSingleton<IConsumablesRepository, ConsumablesRepository>();
+builder.Services.AddSingleton<IProductRepository, ProductRepository>();
 
 // Add services to the container.
 
@@ -33,7 +33,7 @@ builder.Services.AddSwaggerGen(options =>
 builder.Services.AddScoped<IToolService, ToolService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<ICostumerService, CostumerService>();
-builder.Services.AddScoped<IConsumablesService, ConsumablesService>();
+builder.Services.AddScoped<IProductsService, ProductsService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

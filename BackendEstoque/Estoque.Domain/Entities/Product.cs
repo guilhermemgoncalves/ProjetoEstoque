@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Estoque.Domain.Entities
 {
-    public class Consumables
+    public class Product
     {
         [BsonId]
         [BsonRepresentation(BsonType.String)]

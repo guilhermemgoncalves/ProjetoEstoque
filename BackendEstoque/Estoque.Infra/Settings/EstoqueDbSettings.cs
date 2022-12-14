@@ -13,6 +13,6 @@ namespace Estoque.Infra.Settings
         public string ToolCollectionName { get; set; } = null!;
         public string OrderCollectionName { get; set; } = null!;
         public string CostumerCollectionName { get; set; } = null!;
-        public string ConsumablesCollectionName { get; set; } = null!;
+        public string ProductCollectionName { get; set; } = null!;
     }
 }

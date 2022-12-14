@@ -8,7 +8,8 @@ namespace Estoque.Application.Messages.Costumers
 {
     public class UploadImageCommand
     {
-        public string Image { get; set; }
-        public string Container { get; set; }
+        public string Image { get; set; } = null!;
+        public string Container { get; set; } = null!;
+        public string Prontuario { get; set; } = null!;
     }
 }
